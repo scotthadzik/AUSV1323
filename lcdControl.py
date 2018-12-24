@@ -7,7 +7,7 @@ from Lesson import Lesson
 
 BtnPin = 11
 currentLessonNum = 0
-lesson1 = Lesson(1,'Lesson 1')
+lessonList = []
 
 def setup():
 	GPIO.setmode(GPIO.BOARD)       # Numbers GPIOs by physical location
@@ -15,17 +15,40 @@ def setup():
 	GPIO.add_event_detect(BtnPin, GPIO.BOTH, callback=detect, bouncetime=200)
 	
 	LCD1602.init(0x27, 1)	# init(slave address, background light)
-	LCD1602.write(0, 0, 'Greetings!!')
-	LCD1602.write(1, 1, 'from SunFounder')
+	LCD1602.write(0, 0, 'Electrical')
+	LCD1602.write(1, 1, 'Trainer')
 	time.sleep(2)
+	createLessonList()
 	
 	
+def createLessonList():
+	global lessonList
+	lessonList.append(Lesson(1,'Lesson 1'))
+	lessonList.append(Lesson(2,'Lesson 2'))
+	lessonList.append(Lesson(3,'Lesson 3'))
+	lessonList.append(Lesson(4,'Lesson 4'))
+	lessonList.append(Lesson(5,'Lesson 5'))
+	lessonList.append(Lesson(6,'Lesson 6'))
+	lessonList.append(Lesson(7,'Lesson 7'))
+	lessonList.append(Lesson(8,'Lesson 8'))
+	lessonList.append(Lesson(9,'Lesson 9'))
+	lessonList.append(Lesson(10,'Lesson 10'))
+	lessonList.append(Lesson(11,'Lesson 11'))
+	lessonList.append(Lesson(12,'Lesson 12'))
+	lessonList.append(Lesson(13,'Lesson 13'))
+
 
 def updateLCD():
+	currentLesson = ''
+	for lesson in lessonList:
+		if lesson.number == currentLessonNum:
+			currentLesson = lesson
+			break
+
 	message = ('Lesson # ' + str(currentLessonNum))
 	LCD1602.clear()
 	LCD1602.write(0, 0, message)
-	LCD1602.write(0, 1, lesson1.name)
+	LCD1602.write(0, 1, currentLesson.name)
 
 def Print(x):
 	global currentLessonNum
