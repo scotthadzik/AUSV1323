@@ -24,7 +24,7 @@ def Print(x):
 		print ('    *   Button Pressed!   *')
 		print ('    ***********************')
 		currentLesson =+ 1
-		print ('current lesson' + currentLesson)
+		print ('current lesson' + str(currentLesson))
 
 def detect(chn):
 	Print(GPIO.input(BtnPin))
