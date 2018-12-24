@@ -10,6 +10,7 @@ BtnPin = 11
 def setup():
 	GPIO.setmode(GPIO.BOARD)       # Numbers GPIOs by physical location
 	GPIO.setup(BtnPin, GPIO.IN, pull_up_down=GPIO.PUD_UP)    # Set BtnPin's mode is input, and pull up to high level(3.3V)
+	GPIO.add_event_detect(BtnPin, GPIO.BOTH, callback=detect, bouncetime=200)
 	
 	LCD1602.init(0x27, 1)	# init(slave address, background light)
 	LCD1602.write(0, 0, 'Greetings!!')
