@@ -17,6 +17,12 @@ def setup():
 	LCD1602.write(0, 0, 'Greetings!!')
 	LCD1602.write(1, 1, 'from SunFounder')
 	time.sleep(2)
+	
+
+def updateLCD():
+	message = ('Lesson # ' + str(currentLesson))
+	LCD1602.clear()
+	LCD1602.write(0, 0, message)
 
 def Print(x):
 	global currentLesson
@@ -26,6 +32,8 @@ def Print(x):
 		print ('    ***********************')
 		currentLesson += 1
 		print ('current lesson' + str(currentLesson))
+		updateLCD()
+
 
 def detect(chn):
 	Print(GPIO.input(BtnPin))
