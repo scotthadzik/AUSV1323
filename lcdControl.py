@@ -2,11 +2,12 @@
 import LCD1602
 import time
 import RPi.GPIO as GPIO
+from Lesson import Lesson
 
 
 BtnPin = 11
-currentLesson = 0
-
+currentLessonNum = 0
+lesson1 = Lesson(1,'Lesson 1')
 
 def setup():
 	GPIO.setmode(GPIO.BOARD)       # Numbers GPIOs by physical location
@@ -18,20 +19,18 @@ def setup():
 	LCD1602.write(1, 1, 'from SunFounder')
 	time.sleep(2)
 	
+	
 
 def updateLCD():
-	message = ('Lesson # ' + str(currentLesson))
+	message = ('Lesson # ' + str(currentLessonNum))
 	LCD1602.clear()
 	LCD1602.write(0, 0, message)
+	LCD1602.write(0, 1, lesson1.name)
 
 def Print(x):
-	global currentLesson
+	global currentLessonNum
 	if x == 0:
-		print ('    ***********************')
-		print ('    *   Button Pressed!   *')
-		print ('    ***********************')
-		currentLesson += 1
-		print ('current lesson' + str(currentLesson))
+		currentLessonNum += 1
 		updateLCD()
 
 
