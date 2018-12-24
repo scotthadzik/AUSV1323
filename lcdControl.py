@@ -7,18 +7,20 @@ from Lesson import Lesson
 
 UPBtnPin = 11
 DOWNBtnPin = 13
-onPin = 40
+outputPins = [40]
 currentLessonNum = 0
 lessonList = []
 
 def setup():
 	GPIO.setmode(GPIO.BOARD)       # Numbers GPIOs by physical location
 	GPIO.setup(UPBtnPin, GPIO.IN, pull_up_down=GPIO.PUD_UP)    # Set BtnPin's mode is input, and pull up to high level(3.3V)
-	GPIO.setup(onPin, GPIO.OUT)
 	GPIO.setup(DOWNBtnPin, GPIO.IN, pull_up_down=GPIO.PUD_UP)    # Set BtnPin's mode is input, and pull up to high level(3.3V)
 	GPIO.add_event_detect(UPBtnPin, GPIO.BOTH, callback=increaseDetect, bouncetime=200)
 	GPIO.add_event_detect(DOWNBtnPin, GPIO.BOTH, callback=decreaseDetect, bouncetime=200)
 	
+	for pin in outputPins:
+		GPIO.setup(pin, GPIO.OUT)
+
 	LCD1602.init(0x27, 1)	# init(slave address, background light)
 	LCD1602.write(0, 0, 'Electrical')
 	LCD1602.write(1, 1, 'Trainer')
@@ -51,6 +53,8 @@ def setupPin(lesson):
 def BtnCheck(x, increaseLab):
 	global currentLessonNum
 	if x == 0:
+		for pin in outputPins:
+			GPIO.output(pin, GPIO.LOW) # cleanup any pins that were used in the lessons
 		if increaseLab:
 			currentLessonNum += 1
 		else:
