@@ -7,12 +7,14 @@ from Lesson import Lesson
 
 UPBtnPin = 11
 DOWNBtnPin = 13
+onPin = 40
 currentLessonNum = 0
 lessonList = []
 
 def setup():
 	GPIO.setmode(GPIO.BOARD)       # Numbers GPIOs by physical location
 	GPIO.setup(UPBtnPin, GPIO.IN, pull_up_down=GPIO.PUD_UP)    # Set BtnPin's mode is input, and pull up to high level(3.3V)
+	GPIO.setmode(onPin, GPIO.OUT)
 	GPIO.setup(DOWNBtnPin, GPIO.IN, pull_up_down=GPIO.PUD_UP)    # Set BtnPin's mode is input, and pull up to high level(3.3V)
 	GPIO.add_event_detect(UPBtnPin, GPIO.BOTH, callback=increaseDetect, bouncetime=200)
 	GPIO.add_event_detect(DOWNBtnPin, GPIO.BOTH, callback=decreaseDetect, bouncetime=200)
@@ -26,19 +28,8 @@ def setup():
 	
 def createLessonList():
 	global lessonList
-	lessonList.append(Lesson(1,'Lesson 1'))
-	lessonList.append(Lesson(2,'Lesson 2'))
-	lessonList.append(Lesson(3,'Lesson 3'))
-	lessonList.append(Lesson(4,'Lesson 4'))
-	lessonList.append(Lesson(5,'Lesson 5'))
-	lessonList.append(Lesson(6,'Lesson 6'))
-	lessonList.append(Lesson(7,'Lesson 7'))
-	lessonList.append(Lesson(8,'Lesson 8'))
-	lessonList.append(Lesson(9,'Lesson 9'))
-	lessonList.append(Lesson(10,'Lesson 10'))
-	lessonList.append(Lesson(11,'Lesson 11'))
-	lessonList.append(Lesson(12,'Lesson 12'))
-	lessonList.append(Lesson(13,'Lesson 13'))
+	lessonList.append(Lesson(1,'Lesson 1', 40))
+	lessonList.append(Lesson(2,'Lesson 2', 30))
 
 
 def setupLab():
@@ -52,6 +43,10 @@ def setupLab():
 	LCD1602.clear()
 	LCD1602.write(0, 0, message)
 	LCD1602.write(0, 1, currentLesson.name)
+	setupPin(currentLesson)
+
+def setupPin(lesson):
+	GPIO.ouput(lesson.outputPin, GPIO.HIGH)
 
 def BtnCheck(x, increaseLab):
 	global currentLessonNum
@@ -68,7 +63,6 @@ def increaseDetect(chn):
 
 def decreaseDetect(chn):
 	BtnCheck(GPIO.input(DOWNBtnPin), False)
-
 
 def destroy():
 	pass	
