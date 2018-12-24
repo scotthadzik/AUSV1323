@@ -23,7 +23,7 @@ def Print(x):
 		print ('    ***********************')
 		print ('    *   Button Pressed!   *')
 		print ('    ***********************')
-		currentLesson += 1
+		currentLesson =+ 1
 		print ('current lesson' + currentLesson)
 
 def detect(chn):
