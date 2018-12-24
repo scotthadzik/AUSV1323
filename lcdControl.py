@@ -2,11 +2,27 @@
 import LCD1602
 import time
 
+bttPin = 11
+
+
 def setup():
+	GPIO.setmode(GPIO.BOARD)       # Numbers GPIOs by physical location
+	GPIO.setup(BtnPin, GPIO.IN, pull_up_down=GPIO.PUD_UP)    # Set BtnPin's mode is input, and pull up to high level(3.3V)
+	
 	LCD1602.init(0x27, 1)	# init(slave address, background light)
 	LCD1602.write(0, 0, 'Greetings!!')
 	LCD1602.write(1, 1, 'from SunFounder')
 	time.sleep(2)
+
+def Print(x):
+	if x == 0:
+		print '    ***********************'
+		print '    *   Button Pressed!   *'
+		print '    ***********************'
+
+def detect(chn):
+	Print(GPIO.input(BtnPin))
+
 
 def loop():
 	space = '                '
