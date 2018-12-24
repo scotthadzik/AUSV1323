@@ -4,7 +4,7 @@ import time
 import RPi.GPIO as GPIO
 
 
-bttPin = 11
+BtnPin = 11
 
 
 def setup():
