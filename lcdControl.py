@@ -56,7 +56,10 @@ def setupLab():
 def BtnCheck(x, increaseLab):
 	global currentLessonNum
 	if x == 0:
-		currentLessonNum += 1
+		if increaseLab:
+			currentLessonNum += 1
+		else:
+			currentLessonNum -= 1
 		setupLab()
 
 
