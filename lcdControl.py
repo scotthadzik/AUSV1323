@@ -16,9 +16,9 @@ def setup():
 
 def Print(x):
 	if x == 0:
-		print '    ***********************'
-		print '    *   Button Pressed!   *'
-		print '    ***********************'
+		print ('    ***********************')
+		print ('    *   Button Pressed!   *')
+		print ('    ***********************')
 
 def detect(chn):
 	Print(GPIO.input(BtnPin))
