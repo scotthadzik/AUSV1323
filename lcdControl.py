@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 import LCD1602
 import time
+import RPi.GPIO as GPIO
+
 
 bttPin = 11
 
