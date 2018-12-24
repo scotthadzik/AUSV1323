@@ -5,14 +5,17 @@ import RPi.GPIO as GPIO
 from Lesson import Lesson
 
 
-BtnPin = 11
+UPBtnPin = 11
+DOWNBtnPin = 13
 currentLessonNum = 0
 lessonList = []
 
 def setup():
 	GPIO.setmode(GPIO.BOARD)       # Numbers GPIOs by physical location
-	GPIO.setup(BtnPin, GPIO.IN, pull_up_down=GPIO.PUD_UP)    # Set BtnPin's mode is input, and pull up to high level(3.3V)
-	GPIO.add_event_detect(BtnPin, GPIO.BOTH, callback=detect, bouncetime=200)
+	GPIO.setup(UPBtnPin, GPIO.IN, pull_up_down=GPIO.PUD_UP)    # Set BtnPin's mode is input, and pull up to high level(3.3V)
+	GPIO.setup(DownBtnPin, GPIO.IN, pull_up_down=GPIO.PUD_UP)    # Set BtnPin's mode is input, and pull up to high level(3.3V)
+	GPIO.add_event_detect(UPBtnPin, GPIO.BOTH, callback=increaseDetect, bouncetime=200)
+	GPIO.add_event_detect(DOWNBtnPin, GPIO.BOTH, callback=decreaseDetect, bouncetime=200)
 	
 	LCD1602.init(0x27, 1)	# init(slave address, background light)
 	LCD1602.write(0, 0, 'Electrical')
@@ -50,15 +53,18 @@ def setupLab():
 	LCD1602.write(0, 0, message)
 	LCD1602.write(0, 1, currentLesson.name)
 
-def BtnCheck(x):
+def BtnCheck(x, increaseLab):
 	global currentLessonNum
 	if x == 0:
 		currentLessonNum += 1
 		setupLab()
 
 
-def detect(chn):
-	BtnCheck(GPIO.input(BtnPin))
+def increaseDetect(chn):
+	BtnCheck(GPIO.input(UPBtnPin), True)
+
+def decreaseDetect(chn):
+	BtnCheck(GPIO.input(DOWNBtnPin), False)
 
 
 def destroy():
