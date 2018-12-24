@@ -69,6 +69,7 @@ def decreaseDetect(chn):
 	BtnCheck(GPIO.input(DOWNBtnPin), False)
 
 def destroy():
+	GPIO.cleanup()
 	pass	
 
 if __name__ == "__main__":
