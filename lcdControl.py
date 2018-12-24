@@ -38,7 +38,7 @@ def createLessonList():
 	lessonList.append(Lesson(13,'Lesson 13'))
 
 
-def updateLCD():
+def setupLab():
 	currentLesson = ''
 	for lesson in lessonList:
 		if lesson.number == currentLessonNum:
@@ -50,28 +50,16 @@ def updateLCD():
 	LCD1602.write(0, 0, message)
 	LCD1602.write(0, 1, currentLesson.name)
 
-def Print(x):
+def BtnCheck(x):
 	global currentLessonNum
 	if x == 0:
 		currentLessonNum += 1
-		updateLCD()
+		setupLab()
 
 
 def detect(chn):
-	Print(GPIO.input(BtnPin))
+	BtnCheck(GPIO.input(BtnPin))
 
-
-def loop():
-	space = '                '
-	greetings = 'Thank you for buying SunFounder Sensor Kit for Raspberry! ^_^'
-	greetings = space + greetings
-	while True:
-		tmp = greetings
-		for i in range(0, len(greetings)):
-			LCD1602.write(0, 0, tmp)
-			tmp = tmp[1:]
-			time.sleep(0.8)
-			LCD1602.clear()
 
 def destroy():
 	pass	
