@@ -30,8 +30,8 @@ def setup():
 	
 def createLessonList():
 	global lessonList
-	lessonList.append(Lesson(1,'Lesson 1', 40))
-	lessonList.append(Lesson(2,'Lesson 2', 30))
+	lessonList.append(Lesson(1,'Lesson 1', 40, True))
+	lessonList.append(Lesson(2,'Lesson 2', 30, False))
 
 
 def setupLab():
@@ -48,7 +48,7 @@ def setupLab():
 	setupPin(currentLesson)
 
 def setupPin(lesson):
-	GPIO.output(lesson.outputPin, GPIO.HIGH)
+	GPIO.output(lesson.outputPin, lesson.status)
 
 def BtnCheck(x, increaseLab):
 	global currentLessonNum
