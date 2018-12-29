@@ -60,7 +60,7 @@ def BtnCheck(x, increaseLab):
 			if currentLessonNum != numberOfLessons:
 				currentLessonNum += 1
 		else:
-			if currentLessonNum != 1:
+			if currentLessonNum <= 1:
 				currentLessonNum -= 1
 		setupLab()
 
