@@ -61,7 +61,7 @@ def BtnCheck(x, increaseLab):
 		else:
 			currentLessonNum -= 1
 		setupLab()
-	if x == 1:
+	if x == -1:
 		print ('down')
 
 
