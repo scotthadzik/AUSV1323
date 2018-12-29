@@ -10,6 +10,7 @@ DOWNBtnPin = 13
 outputPins = [40]
 currentLessonNum = 0
 lessonList = []
+numberOfLessons = 2
 
 def setup():
 	GPIO.setmode(GPIO.BOARD)       # Numbers GPIOs by physical location
@@ -56,9 +57,11 @@ def BtnCheck(x, increaseLab):
 		for pin in outputPins:
 			GPIO.output(pin, GPIO.LOW) 
 		if increaseLab:
-			currentLessonNum += 1
+			if currentLessonNum != numberOfLessons
+				currentLessonNum += 1
 		else:
-			currentLessonNum -= 1
+			if currentLessonNum != 1
+				currentLessonNum -= 1
 		setupLab()
 
 def increaseDetect(chn):
