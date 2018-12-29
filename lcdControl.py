@@ -53,6 +53,7 @@ def setupPin(lesson):
 def BtnCheck(x, increaseLab):
 	global currentLessonNum
 	if x == 0:
+		print ('up')
 		for pin in outputPins:
 			GPIO.output(pin, GPIO.LOW) # cleanup any pins that were used in the lessons
 		if increaseLab:
@@ -60,6 +61,8 @@ def BtnCheck(x, increaseLab):
 		else:
 			currentLessonNum -= 1
 		setupLab()
+	if x == 1:
+		print ('down')
 
 
 def increaseDetect(chn):
