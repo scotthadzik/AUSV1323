@@ -56,10 +56,10 @@ def setupLab():
 	LCD1602.clear()
 	LCD1602.write(0, 0, message)
 	LCD1602.write(0, 1, currentLesson.name)
-	setupPin(currentLesson)
+	# setupPin(currentLesson)
 
-def setupPin(lesson):
-	GPIO.output(lesson.outputPin, lesson.status)
+# def setupPin(lesson):
+# 	GPIO.output(lesson.outputPin, lesson.status)
 
 def BtnCheck(x, increaseLab):
 	global currentLessonNum
