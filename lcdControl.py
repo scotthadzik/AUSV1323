@@ -5,8 +5,8 @@ import RPi.GPIO as GPIO
 from Lesson import Lesson
 
 
-UPBtnPin = 26
-DOWNBtnPin = 24
+UPBtnPin = 24
+DOWNBtnPin = 26
 outputPins = [40]
 currentLessonNum = 0
 lessonList = []
