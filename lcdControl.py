@@ -69,4 +69,15 @@ def increaseDetect(chn):
 
 def decreaseDetect(chn):
 	BtnCheck(GPIO.input(DOWNBtnPin), False)
-	
+
+def destroy():
+	GPIO.cleanup()
+	pass
+
+if __name__ == "__main__":
+	try:
+		setup()
+		while True:
+			pass
+	except KeyboardInterrupt:
+		destroy()
