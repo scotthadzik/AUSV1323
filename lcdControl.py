@@ -10,7 +10,7 @@ DOWNBtnPin = 26
 outputPins = [40]
 currentLessonNum = 0
 lessonList = []
-numberOfLessons = 2
+numberOfLessons = 15
 
 def setup():
 	GPIO.setmode(GPIO.BOARD)       # Numbers GPIOs by physical location
