@@ -5,8 +5,8 @@ import RPi.GPIO as GPIO
 from Lesson import Lesson
 
 
-UPBtnPin = 11
-DOWNBtnPin = 13
+UPBtnPin = 24
+DOWNBtnPin = 26
 outputPins = [40]
 currentLessonNum = 0
 lessonList = []
@@ -72,7 +72,7 @@ def decreaseDetect(chn):
 
 def destroy():
 	GPIO.cleanup()
-	pass	
+	pass	sa
 
 if __name__ == "__main__":
 	try:
