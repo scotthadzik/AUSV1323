@@ -33,6 +33,16 @@ def createLessonList():
 	global lessonList
 	lessonList.append(Lesson(1,'Lesson 1', 40, True))
 	lessonList.append(Lesson(2,'Lesson 2', 30, False))
+	lessonList.append(Lesson(3,'Lesson 3', 30, False))
+	lessonList.append(Lesson(4,'Lesson 4', 30, False))
+	lessonList.append(Lesson(5,'Lesson 5', 30, False))
+	lessonList.append(Lesson(6,'Lesson 6', 30, False))
+	lessonList.append(Lesson(7,'Lesson 7', 30, False))
+	lessonList.append(Lesson(8,'Lesson 8', 30, False))
+	lessonList.append(Lesson(9,'Lesson 9', 30, False))
+	lessonList.append(Lesson(10,'Lesson 10', 30, False))
+	lessonList.append(Lesson(11,'Lesson 11', 30, False))
+	lessonList.append(Lesson(12,'Lesson 12', 30, False))
 
 
 def setupLab():
