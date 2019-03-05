@@ -20,15 +20,17 @@ def setup():
 	GPIO.add_event_detect(UPBtnPin, GPIO.BOTH, callback=increaseDetect, bouncetime=500)
 	GPIO.add_event_detect(DOWNBtnPin, GPIO.BOTH, callback=decreaseDetect, bouncetime=500)
 
+	
+	LCD1602.init(0x27, 1)	# init(slave address, background light)
+	LCD1602.write(0, 0, 'Relay Check')
+	LCD1602.write(1, 1, 'Trainer')
+	time.sleep(2)
+
 	GPIO.setup(11, GPIO.OUT)
 	LCD1602.write(1, 1, 'Relay 1')
 	GPIO.output(11, GPIO.high)
 	time.sleep(1000)
 
-	# LCD1602.init(0x27, 1)	# init(slave address, background light)
-	# LCD1602.write(0, 0, 'Relay Check')
-	# LCD1602.write(1, 1, 'Trainer')
-	# time.sleep(2)
 	# createRelayList()
 	# checkRelayBoard()
 
