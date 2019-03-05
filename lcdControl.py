@@ -3,7 +3,7 @@ import LCD1602
 import time
 import RPi.GPIO as GPIO
 from Lesson import Lesson
-from Realy import Relay
+from Relay import Relay
 
 
 UPBtnPin = 24
