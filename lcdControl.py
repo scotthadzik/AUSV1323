@@ -21,7 +21,7 @@ def setup():
 	GPIO.add_event_detect(DOWNBtnPin, GPIO.BOTH, callback=decreaseDetect, bouncetime=500)
 
 	GPIO.setup(11, GPIO.OUT)
-	LCD1602.write(1, 1, relay.name)
+	LCD1602.write(1, 1, 'Relay 1')
 	GPIO.output(11, GPIO.high)
 	time.sleep(1000)
 
