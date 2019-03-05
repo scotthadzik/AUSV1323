@@ -57,7 +57,7 @@ def createRelayList():
 	relayList.append(Relay("Relay 5", 31))
 	
 	for relay in relayList:
-		GPIO.setup(relay.outputPin, GPIO.OUT, initial=HIGH)
+		GPIO.setup(relay.outputPin, GPIO.OUT, initial=1)
 		# GPIO.output(relay.outputPin, GPIO.HIGH)
 		time.sleep(2)
 	
