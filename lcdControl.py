@@ -48,15 +48,17 @@ def createLessonList():
 
 
 def createRelayList():
-	# global relayList
-	# relayList.append(Relay("Relay 1", 11))
 	LCD1602.write(0, 0, 'Relay Check')
-	LCD1602.write(1, 1, 'Trainer')
+	global relayList
+	relayList.append(Relay("Relay 1", 11))
+	
+	for relay in relayList:
+		GPIO.setup(relay.outputPin, GPIO.OUT)
 	time.sleep(2)
-	GPIO.setup(11, GPIO.OUT)
+	LCD1602.write(1, 1, 'Relay 1')
 
 def checkRelayBoard():
-	LCD1602.write(1, 1, 'Relay 1')
+	
 	GPIO.output(11, GPIO.LOW)
 
 	# Pin 3 Relay Board -> GPIO18
