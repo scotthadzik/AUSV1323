@@ -29,7 +29,8 @@ def setup():
 	GPIO.setup(11, GPIO.OUT)
 	LCD1602.write(1, 1, 'Relay 1')
 	GPIO.output(11, GPIO.LOW)
-	time.sleep(1000)
+	time.sleep(5)
+	GPIO.output(11, GPIO.HIGH)
 
 	# createRelayList()
 	# checkRelayBoard()
