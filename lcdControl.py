@@ -3,11 +3,12 @@ import LCD1602
 import time
 import RPi.GPIO as GPIO
 from Lesson import Lesson
+from Realy import Relay
 
 
 UPBtnPin = 24
 DOWNBtnPin = 26
-outputPins = [40]
+relayList = []
 currentLessonNum = 0
 lessonList = []
 numberOfLessons = 12
@@ -18,11 +19,17 @@ def setup():
 	GPIO.setup(DOWNBtnPin, GPIO.IN, pull_up_down=GPIO.PUD_UP)    # Set BtnPin's mode is input, and pull up to high level(3.3V)
 	GPIO.add_event_detect(UPBtnPin, GPIO.BOTH, callback=increaseDetect, bouncetime=500)
 	GPIO.add_event_detect(DOWNBtnPin, GPIO.BOTH, callback=decreaseDetect, bouncetime=500)
-	
-	for pin in outputPins:
-		GPIO.setup(pin, GPIO.OUT)
 
 	LCD1602.init(0x27, 1)	# init(slave address, background light)
+	LCD1602.write(0, 0, 'Relay Check')
+	LCD1602.write(1, 1, 'Trainer')
+	time.sleep(2)
+	createRelayList()
+	checkRelayBoard()
+
+
+
+	LCD1602.clear	# init(slave address, background light)
 	LCD1602.write(0, 0, 'Electrical')
 	LCD1602.write(1, 1, 'Trainer')
 	time.sleep(2)
@@ -43,6 +50,38 @@ def createLessonList():
 	lessonList.append(Lesson(10,'Lesson 10', 30, False))
 	lessonList.append(Lesson(11,'Lesson 11', 30, False))
 	lessonList.append(Lesson(12,'Lesson 12', 30, False))
+
+
+def createRelayList():
+	global relayList
+	relayList.append(Relay("Relay 1", 11))
+
+def checkRelayBoard():
+	for relay in relayList:
+		GPIO.setup(relay.outputPin, GPIO.OUT)
+		LCD1602.write(1, 1, relay.name)
+		GPIO.output(relay.outputPin, GPIO.high)
+		time.sleep(1000)
+
+	# Pin 3 Relay Board -> GPIO18
+	# Pin 4 Relay Board -> GPIO17
+	# Pin 5 Relay Board -> GPIO23
+	# Pin 6 Relay Board -> GPIO27
+	# Pin 7 Relay Board -> GPIO24
+	# Pin 8 Relay Board -> GPIO25
+	# Pin 9 Relay Board -> GPIO25
+	# Pin 10 Relay Board -> GPIO5
+	# Pin 11 Relay Board -> GPIO12
+	# Pin 12 Relay Board -> GPIO6
+	# Pin 13 Relay Board -> GPIO16
+	# Pin 14 Relay Board -> GPIO13
+	# Pin 15 Relay Board -> GPIO20
+	# Pin 16 Relay Board -> GPIO19
+	# Pin 17 Relay Board -> GPIO21
+	# Pin 18 Relay Board -> GPIO26
+
+
+
 
 
 def setupLab():
