@@ -22,26 +22,13 @@ def setup():
 
 	
 	LCD1602.init(0x27, 1)	# init(slave address, background light)
-	LCD1602.write(0, 0, 'Relay Check')
+	LCD1602.clear	# init(slave address, background light)
+	LCD1602.write(0, 0, 'Electrical')
 	LCD1602.write(1, 1, 'Trainer')
 	time.sleep(2)
-
-	GPIO.setup(11, GPIO.OUT)
-	LCD1602.write(1, 1, 'Relay 1')
-	GPIO.output(11, GPIO.LOW)
-	time.sleep(5)
-	GPIO.output(11, GPIO.HIGH)
-
-	# createRelayList()
-	# checkRelayBoard()
-
-
-
-	# LCD1602.clear	# init(slave address, background light)
-	# LCD1602.write(0, 0, 'Electrical')
-	# LCD1602.write(1, 1, 'Trainer')
-	# time.sleep(2)
-	# createLessonList()
+	createRelayList()
+	checkRelayBoard()
+	createLessonList()
 	
 	
 def createLessonList():
@@ -61,15 +48,16 @@ def createLessonList():
 
 
 def createRelayList():
-	global relayList
-	relayList.append(Relay("Relay 1", 11))
+	# global relayList
+	# relayList.append(Relay("Relay 1", 11))
+	LCD1602.write(0, 0, 'Relay Check')
+	LCD1602.write(1, 1, 'Trainer')
+	time.sleep(2)
+	GPIO.setup(11, GPIO.OUT)
 
 def checkRelayBoard():
-	for relay in relayList:
-		GPIO.setup(11, GPIO.OUT)
-		LCD1602.write(1, 1, relay.name)
-		GPIO.output(11, GPIO.high)
-		time.sleep(1000)
+	LCD1602.write(1, 1, 'Relay 1')
+	GPIO.output(11, GPIO.LOW)
 
 	# Pin 3 Relay Board -> GPIO18
 	# Pin 4 Relay Board -> GPIO17
