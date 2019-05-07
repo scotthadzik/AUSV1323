@@ -11,13 +11,12 @@ def setup():
 
 def loop():
 	while True:
-		print ('...relay on')
-		time.sleep(5)
-		# GPIO.output(RelayPin, GPIO.LOW)
-		# time.sleep(0.5)
-		# print ('relay off...')
-		# GPIO.output(RelayPin, GPIO.HIGH)
-		# time.sleep(0.5)
+		print ('relay on...')
+		GPIO.output(RelayPin, GPIO.LOW)
+		time.sleep(0.5)
+		print ('relay off...')
+		GPIO.output(RelayPin, GPIO.HIGH)
+		time.sleep(0.5)
 
 def destroy():
 	GPIO.output(RelayPin, GPIO.HIGH)
