@@ -48,7 +48,7 @@ def createLessonList():
 
 
 def createRelayList():
-	LCD1602.write(0, 0, 'Relay Check')
+	LCD1602.write(0, 0, 'Add Relays')
 	global relayList
 	relayList.append(Relay("Relay 1", 11))
 	relayList.append(Relay("Relay 3", 13))
