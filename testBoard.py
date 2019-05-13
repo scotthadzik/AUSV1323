@@ -57,19 +57,20 @@ def createRelayList():
 	relayList.append(Relay("Relay 9", 31))
 	
 	for relay in relayList:
-		GPIO.setup(relay.outputPin, GPIO.OUT, initial=1)
+		GPIO.setup(relay.outputPin, GPIO.OUT, initial=0)
 		# GPIO.output(relay.outputPin, GPIO.HIGH)
-		time.sleep(2)
+		time.sleep(.1)
 	
 	
 
 def checkRelayBoard():
+	LCD1602.write(0, 0, 'Relay Check')
 	for relay in relayList:
 		LCD1602.write(1, 1, relay.name)
 		GPIO.output(relay.outputPin, GPIO.LOW)
-		time.sleep(2)
+		time.sleep(.1)
 		GPIO.output(relay.outputPin, GPIO.HIGH)
-		time.sleep(2)
+		time.sleep(.1)
 		
 
 	# RELAY 2Pin 3 Relay Board -> GPIO18
