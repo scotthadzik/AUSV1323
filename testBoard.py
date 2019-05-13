@@ -67,10 +67,10 @@ def checkRelayBoard():
 	LCD1602.write(0, 0, 'Relay Check')
 	for relay in relayList:
 		LCD1602.write(1, 1, relay.name)
-		GPIO.output(relay.outputPin, GPIO.LOW)
-		time.sleep(.1)
 		GPIO.output(relay.outputPin, GPIO.HIGH)
-		time.sleep(.1)
+		time.sleep(.2)
+		GPIO.output(relay.outputPin, GPIO.LOW)
+		time.sleep(.2)
 		
 
 	# RELAY 2Pin 3 Relay Board -> GPIO18
