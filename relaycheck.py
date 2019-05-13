@@ -1,8 +1,9 @@
 #!/usr/bin/env python
 import RPi.GPIO as GPIO
 import time
+import Relay
 
-RelayPin = 12    # pin11
+oddRelays = []
 
 def setup():
 	GPIO.setmode(GPIO.BOARD)       # Numbers GPIOs by physical location
