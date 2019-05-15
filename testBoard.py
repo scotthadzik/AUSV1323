@@ -61,9 +61,9 @@ def createRelayList():
 	relayList.append(Relay("Relay 9", 31))
 	relayList.append(Relay("Relay 10", 22))
 	relayList.append(Relay("Relay 11", 33))
-	relayList.append(Relay("Relay 12", 32))
+	relayList.append(Relay("Relay 12", 38))
 	relayList.append(Relay("Relay 13", 35))
-	relayList.append(Relay("Relay 14", 36))
+	relayList.append(Relay("Relay 14", 40))
 	
 	
 	
