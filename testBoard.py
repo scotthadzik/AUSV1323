@@ -51,21 +51,23 @@ def createRelayList():
 	LCD1602.write(0, 0, 'Add Relays')
 	global relayList
 	relayList.append(Relay("Relay 1", 11))
-	relayList.append(Relay("Relay 3", 13)) 
-	relayList.append(Relay("Relay 5", 15))
-	relayList.append(Relay("Relay 7", 29))
-	relayList.append(Relay("Relay 9", 31))
-	relayList.append(Relay("Relay 11", 33))
-	relayList.append(Relay("Relay 13", 35))
-	
-	
 	relayList.append(Relay("Relay 2", 37))
-	relayList.append(Relay("Relay 4", 12))
+	relayList.append(Relay("Relay 3", 13))
+	relayList.append(Relay("Relay 4", 12)) 
+	relayList.append(Relay("Relay 5", 15))
 	relayList.append(Relay("Relay 6", 16))
+	relayList.append(Relay("Relay 7", 29))
 	relayList.append(Relay("Relay 8", 18))
+	relayList.append(Relay("Relay 9", 31))
 	relayList.append(Relay("Relay 10", 22))
-	# relayList.append(Relay("Relay 12", 28))
-	relayList.append(Relay("Relay 14", 32))
+	relayList.append(Relay("Relay 11", 33))
+	relayList.append(Relay("Relay 12", 32))
+	relayList.append(Relay("Relay 13", 35))
+	relayList.append(Relay("Relay 14", 36))
+	
+	
+	
+	
 	
 	
 	for relay in relayList:
