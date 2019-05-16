@@ -1,7 +1,9 @@
+import Relay
+
 class Lesson:
 
-	def __init__ (self, number, name, outputPin, status):
+	def __init__ (self, number, name, relay, status):
 		self.name 	= name
 		self.number = number
-		self.outputPin = outputPin
+		self.relay = relay
 		self.status = status

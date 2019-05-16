@@ -32,98 +32,71 @@ def setup():
 	
 def createLessonList():
 	global lessonList
-	lessonList.append(Lesson(1,'Lesson 1', 40, True))
-	lessonList.append(Lesson(2,'Lesson 2', 30, False))
-	lessonList.append(Lesson(3,'Lesson 3', 30, False))
-	lessonList.append(Lesson(4,'Lesson 4', 30, False))
-	lessonList.append(Lesson(5,'Lesson 5', 30, False))
-	lessonList.append(Lesson(6,'Lesson 6', 30, False))
-	lessonList.append(Lesson(7,'Lesson 7', 30, False))
-	lessonList.append(Lesson(8,'Lesson 8', 30, False))
-	lessonList.append(Lesson(9,'Lesson 9', 30, False))
-	lessonList.append(Lesson(10,'Lesson 10', 30, False))
-	lessonList.append(Lesson(11,'Lesson 11', 30, False))
-	lessonList.append(Lesson(12,'Lesson 12', 30, False))
+	lessonList.append(Lesson(1,'Lesson 1', 1, True))
+	lessonList.append(Lesson(2,'Lesson 2', 2, False))
+	lessonList.append(Lesson(3,'Lesson 3', 3, False))
+	lessonList.append(Lesson(4,'Lesson 4', 4, False))
+	lessonList.append(Lesson(5,'Lesson 5', 5, False))
+	lessonList.append(Lesson(6,'Lesson 6', 6, False))
+	lessonList.append(Lesson(7,'Lesson 7', 7, False))
+	lessonList.append(Lesson(8,'Lesson 8', 8, False))
+	lessonList.append(Lesson(9,'Lesson 9', 9, False))
+	lessonList.append(Lesson(10,'Lesson 10', 10, False))
+	lessonList.append(Lesson(11,'Lesson 11', 11, False))
+	lessonList.append(Lesson(12,'Lesson 12', 12, False))
+	lessonList.append(Lesson(10,'Lesson 13', 13, False))
+	lessonList.append(Lesson(11,'Lesson 14', 14, False))
+	lessonList.append(Lesson(12,'Lesson 15', 15, False))
+	lessonList.append(Lesson(12,'Lesson 16', 16, False))
 
 
 def createRelayList():
 	LCD1602.write(0, 0, 'Add Relays')
 	global relayList
-	relayList.append(Relay("Relay 1", 11))
-	relayList.append(Relay("Relay 2", 37))
-	relayList.append(Relay("Relay 3", 13))
-	relayList.append(Relay("Relay 4", 12)) 
-	relayList.append(Relay("Relay 5", 15))
-	relayList.append(Relay("Relay 6", 16))
-	relayList.append(Relay("Relay 7", 29))
-	relayList.append(Relay("Relay 8", 18))
-	relayList.append(Relay("Relay 9", 31))
-	relayList.append(Relay("Relay 10", 22))
-	relayList.append(Relay("Relay 11", 33))
-	relayList.append(Relay("Relay 12", 32))
-	relayList.append(Relay("Relay 13", 35))
-	relayList.append(Relay("Relay 14", 36))
-	relayList.append(Relay("Relay 15", 38))
-	relayList.append(Relay("Relay 16", 40))
-	
-	
-	
-	
-	
+	relayList.append(Relay("Relay 1",1, 11))
+	relayList.append(Relay("Relay 2",2, 37))
+	relayList.append(Relay("Relay 3",3, 13))
+	relayList.append(Relay("Relay 4",4, 12)) 
+	relayList.append(Relay("Relay 5",5, 15))
+	relayList.append(Relay("Relay 6",6, 16))
+	relayList.append(Relay("Relay 7",7, 29))
+	relayList.append(Relay("Relay 8",8, 18))
+	relayList.append(Relay("Relay 9",9, 31))
+	relayList.append(Relay("Relay 10",10, 22))
+	relayList.append(Relay("Relay 11",11, 33))
+	relayList.append(Relay("Relay 12",12, 32))
+	relayList.append(Relay("Relay 13",13, 35))
+	relayList.append(Relay("Relay 14",14, 36))
+	relayList.append(Relay("Relay 15",15, 40))
+	relayList.append(Relay("Relay 16",16, 38))
 	
 	for relay in relayList:
 		GPIO.setup(relay.outputPin, GPIO.OUT, initial=0)
-		time.sleep(.1)
 	
-	
-
 def checkRelayBoard():
 	LCD1602.write(0, 0, 'Relay Check')
 	for relay in relayList:
 		LCD1602.write(1, 1, relay.name)
 		GPIO.output(relay.outputPin, GPIO.HIGH)
-		time.sleep(.2)
+		time.sleep(.5)
 		GPIO.output(relay.outputPin, GPIO.LOW)
-		time.sleep(.2)
-		
-
-	# RELAY 2Pin 3 Relay Board -> GPIO18
-	# Pin 4 Relay Board -> GPIO17
-	# Pin 5 Relay Board -> GPIO23
-	# Pin 6 Relay Board -> GPIO27
-	# Pin 7 Relay Board -> GPIO24
-	# Pin 8 Relay Board -> GPIO25
-	# Pin 9 Relay Board -> GPIO25
-	# Pin 10 Relay Board -> GPIO5
-	# Pin 11 Relay Board -> GPIO12
-	# Pin 12 Relay Board -> GPIO6
-	# Pin 13 Relay Board -> GPIO16
-	# Pin 14 Relay Board -> GPIO13
-	# Pin 15 Relay Board -> GPIO20
-	# Pin 16 Relay Board -> GPIO19
-	# Pin 17 Relay Board -> GPIO21
-	# Pin 18 Relay Board -> GPIO26
-
-
-
-
+		time.sleep(.5)
 
 def setupLab():
 	createRelayList()
 	checkRelayBoard()
 	createLessonList()
-	# setup
-	# currentLesson = ''
-	# for lesson in lessonList:
-	# 	if lesson.number == currentLessonNum:
-	# 		currentLesson = lesson
-	# 		break
+	currentLesson = ''
+	for lesson in lessonList:
+		if lesson.number == currentLessonNum:
+			currentLesson = lesson
+			break
 
-	# message = ('Lesson # ' + str(currentLessonNum))
-	# LCD1602.clear()
-	# LCD1602.write(0, 0, message)
-	# LCD1602.write(0, 1, currentLesson.name)
-	# # setupPin(currentLesson)
+	message = ('Lesson # ' + str(currentLessonNum))
+	LCD1602.clear()
+	LCD1602.write(0, 0, message)
+	LCD1602.write(0, 1, currentLesson.name)
+	# setupPin(currentLesson)
 
 # def setupPin(lesson):
 # 	GPIO.output(lesson.outputPin, lesson.status)
