@@ -115,9 +115,11 @@ def BtnCheck(x, increaseLab):
 		setupLab()
 
 def increaseDetect(chn):
+	print('increase')
 	BtnCheck(GPIO.input(UPBtnPin), True)
 
 def decreaseDetect(chn):
+	print('decrease')
 	BtnCheck(GPIO.input(DOWNBtnPin), False)
 
 def destroy():
