@@ -29,6 +29,7 @@ def setup():
 	createRelayList()
 	checkRelayBoard()
 	createLessonList()
+	setupLab()
 	
 	
 def createLessonList():
@@ -72,7 +73,6 @@ def createRelayList():
 	
 	for relay in relayList:
 		GPIO.setup(relay.outputPin, GPIO.OUT, initial=0)
-		# GPIO.output(relay.outputPin, GPIO.HIGH)
 		time.sleep(.1)
 	
 	
