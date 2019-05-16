@@ -99,7 +99,7 @@ def setupLab():
 	# setupPin(currentLesson)
 
 def setupPin(lesson):
-	GPIO.output(lesson.outputPin, lesson.status)
+	GPIO.output(lesson.relay, lesson.status)
 
 def BtnCheck(x, increaseLab):
 	global currentLessonNum
