@@ -26,9 +26,7 @@ def setup():
 	LCD1602.write(0, 0, 'Electrical')
 	LCD1602.write(1, 1, 'Trainer')
 	time.sleep(2)
-	createRelayList()
-	checkRelayBoard()
-	createLessonList()
+
 	setupLab()
 	
 	
@@ -62,9 +60,11 @@ def createRelayList():
 	relayList.append(Relay("Relay 9", 31))
 	relayList.append(Relay("Relay 10", 22))
 	relayList.append(Relay("Relay 11", 33))
-	relayList.append(Relay("Relay 12", 38))
-	relayList.append(Relay("Relay 13", 35))
+	relayList.append(Relay("Relay 12", 32))
+	relayList.append(Relay("Relay 13", 36))
 	relayList.append(Relay("Relay 14", 40))
+	relayList.append(Relay("Relay 15", 38))
+	relayList.append(Relay("Relay 16", 40))
 	
 	
 	
@@ -109,17 +109,21 @@ def checkRelayBoard():
 
 
 def setupLab():
-	currentLesson = ''
-	for lesson in lessonList:
-		if lesson.number == currentLessonNum:
-			currentLesson = lesson
-			break
+	createRelayList()
+	checkRelayBoard()
+	createLessonList()
+	# setup
+	# currentLesson = ''
+	# for lesson in lessonList:
+	# 	if lesson.number == currentLessonNum:
+	# 		currentLesson = lesson
+	# 		break
 
-	message = ('Lesson # ' + str(currentLessonNum))
-	LCD1602.clear()
-	LCD1602.write(0, 0, message)
-	LCD1602.write(0, 1, currentLesson.name)
-	# setupPin(currentLesson)
+	# message = ('Lesson # ' + str(currentLessonNum))
+	# LCD1602.clear()
+	# LCD1602.write(0, 0, message)
+	# LCD1602.write(0, 1, currentLesson.name)
+	# # setupPin(currentLesson)
 
 # def setupPin(lesson):
 # 	GPIO.output(lesson.outputPin, lesson.status)
