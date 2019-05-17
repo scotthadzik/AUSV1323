@@ -84,7 +84,7 @@ def checkRelayBoard():
 
 def setupLab():
 	createRelayList()
-	checkRelayBoard()
+	# checkRelayBoard()
 	createLessonList()
 	currentLesson = ''
 	for lesson in lessonList:
