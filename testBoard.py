@@ -8,6 +8,7 @@ from Relay import Relay
 
 UPBtnPin = 24
 DOWNBtnPin = 26
+relayCheckTime = .1
 relayList = []
 currentLessonNum = 1
 lessonList = []
@@ -44,10 +45,10 @@ def createLessonList():
 	lessonList.append(Lesson(10,'Lesson 10', 10, False))
 	lessonList.append(Lesson(11,'Lesson 11', 11, False))
 	lessonList.append(Lesson(12,'Lesson 12', 12, False))
-	lessonList.append(Lesson(10,'Lesson 13', 13, False))
-	lessonList.append(Lesson(11,'Lesson 14', 14, False))
-	lessonList.append(Lesson(12,'Lesson 15', 15, False))
-	lessonList.append(Lesson(12,'Lesson 16', 16, False))
+	lessonList.append(Lesson(13,'Lesson 13', 13, False))
+	lessonList.append(Lesson(14,'Lesson 14', 14, False))
+	lessonList.append(Lesson(15,'Lesson 15', 15, False))
+	lessonList.append(Lesson(16,'Lesson 16', 16, False))
 
 
 def createRelayList():
@@ -78,13 +79,13 @@ def checkRelayBoard():
 	for relay in relayList:
 		LCD1602.write(1, 1, relay.name)
 		GPIO.output(relay.outputPin, GPIO.HIGH)
-		time.sleep(.5)
+		time.sleep(relayCheckTime)
 		GPIO.output(relay.outputPin, GPIO.LOW)
 		time.sleep(.5)
 
 def setupLab():
 	createRelayList()
-	# checkRelayBoard()
+	checkRelayBoard()
 	createLessonList()
 	currentLesson = ''
 	for lesson in lessonList:
