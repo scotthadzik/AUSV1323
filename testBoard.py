@@ -90,6 +90,7 @@ def checkRelayBoard():
 		GPIO.output(relay.outputPin, GPIO.HIGH)
 		time.sleep(relayCheckTime)
 		GPIO.output(relay.outputPin, GPIO.LOW)
+		time.sleep(.5)
 
 def setupLab():
 	createRelayList()
