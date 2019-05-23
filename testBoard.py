@@ -54,7 +54,7 @@ def createLessonList():
 def createRelayList():
 	LCD1602.write(0, 0, 'Add Relays')
 	global relayList
-	relayB1 = Relay("Relay B1", 9, 40)
+	relayB1 = Relay("Relay B1", 9, 40)m
 	relayB2 = Relay("Relay B2", 10, 35)
 	relayB3 = Relay("Relay B3", 11, 38)
 	relayB4 = Relay("Relay B4", 12, 33)
@@ -90,7 +90,6 @@ def checkRelayBoard():
 		GPIO.output(relay.outputPin, GPIO.HIGH)
 		time.sleep(relayCheckTime)
 		GPIO.output(relay.outputPin, GPIO.LOW)
-		time.sleep(relayCheckTime)
 
 def setupLab():
 	createRelayList()
