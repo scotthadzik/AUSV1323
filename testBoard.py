@@ -8,7 +8,7 @@ from Relay import Relay
 
 UPBtnPin = 24
 DOWNBtnPin = 26
-relayCheckTime = .1
+relayCheckTime = .25
 relayList = []
 currentLessonNum = 1
 lessonList = []
@@ -54,22 +54,31 @@ def createLessonList():
 def createRelayList():
 	LCD1602.write(0, 0, 'Add Relays')
 	global relayList
-	relayList.append(Relay("Relay 1",1, 11))
-	relayList.append(Relay("Relay 2",2, 37))
-	relayList.append(Relay("Relay 3",3, 13))
-	relayList.append(Relay("Relay 4",4, 12)) 
-	relayList.append(Relay("Relay 5",5, 15))
-	relayList.append(Relay("Relay 6",6, 16))
-	relayList.append(Relay("Relay 7",7, 29))
-	relayList.append(Relay("Relay 8",8, 18))
-	relayList.append(Relay("Relay 9",9, 31))
-	relayList.append(Relay("Relay 10",10, 22))
-	relayList.append(Relay("Relay 11",11, 33))
-	relayList.append(Relay("Relay 12",12, 32))
-	relayList.append(Relay("Relay 13",13, 35))
-	relayList.append(Relay("Relay 14",14, 36))
-	relayList.append(Relay("Relay 15",15, 40))
-	relayList.append(Relay("Relay 16",16, 38))
+	relayB1 = Relay("Relay B1", 9, 40))
+	relayB2 = Relay("Relay B2", 10, 35))
+	relayB3 = Relay("Relay B3", 11, 38))
+	relayB4 = Relay("Relay B4", 12, 33))
+	relayC1 = Relay("Relay C1", 8, 29))
+	relayC2 = Relay("Relay C2", 7, 12))
+	relayC3 = Relay("Relay C3", 6, 22))
+	relayC4 = Relay("Relay C4", 5, 11))
+	relayBRest = Relay("Relay BRest", 2, 16))
+	relayBShort = Relay("Relay BShort", 1, 15))
+	relayCRest = Relay("Relay CRest", 4, 18))
+	relayCShort = Relay("Relay CShort", 3, 13))
+
+	relayList.append(relayB1))
+	relayList.append(relayB2))
+	relayList.append(relayB3))
+	relayList.append(relayB4)) 
+	relayList.append(relayC1))
+	relayList.append(relayC2))
+	relayList.append(relayC3))
+	relayList.append(relayC4))
+	relayList.append(relayBRest))
+	relayList.append(relayBShort))
+	relayList.append(relayCRest))
+	relayList.append(relayCShort))
 	
 	for relay in relayList:
 		GPIO.setup(relay.outputPin, GPIO.OUT, initial=0)
@@ -81,12 +90,12 @@ def checkRelayBoard():
 		GPIO.output(relay.outputPin, GPIO.HIGH)
 		time.sleep(relayCheckTime)
 		GPIO.output(relay.outputPin, GPIO.LOW)
-		time.sleep(.5)
+		time.sleep(relayCheckTime)
 
 def setupLab():
 	createRelayList()
 	checkRelayBoard()
-	createLessonList()
+	# createLessonList()
 	currentLesson = ''
 	for lesson in lessonList:
 		if lesson.number == currentLessonNum:
