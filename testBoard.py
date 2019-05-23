@@ -8,7 +8,7 @@ from Relay import Relay
 
 UPBtnPin = 24
 DOWNBtnPin = 26
-relayCheckTime = .25
+relayCheckTime = 5
 relayList = []
 currentLessonNum = 1
 lessonList = []
