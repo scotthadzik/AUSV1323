@@ -54,18 +54,22 @@ def createLessonList():
 def createRelayList():
 	LCD1602.write(0, 0, 'Add Relays')
 	global relayList
+
+	# 1:15, 2:16, 3:13, 4:18,  5:11,  6:22, 7:12, 8:29, 9:40, 10:35, 11:38, 12:33
+
 	relayB1 = Relay("Relay B1", 9, 40)
 	relayB2 = Relay("Relay B2", 10, 35)
-	relayB3 = Relay("Relay B3", 11, 38)
-	relayB4 = Relay("Relay B4", 12, 33)
+	relayB3 = Relay("Relay B3", 8, 29)
+	relayB4 = Relay("Relay B4", 7, 12)
 	# relayC1 = Relay("Relay C1", 8, 29)
 	# relayC2 = Relay("Relay C2", 7, 12)
 	# relayC3 = Relay("Relay C3", 6, 22)
 	# relayC4 = Relay("Relay C4", 5, 11)
-	relayBRest = Relay("Relay BRest", 2, 16)
-	relayBShort = Relay("Relay BShort", 1, 15)
+	relayBRest = Relay("Relay BRest", 4, 16)
+	relayBShort = Relay("Relay BShort", 3, 15)
 	# relayCRest = Relay("Relay CRest", 4, 18)
 	# relayCShort = Relay("Relay CShort", 3, 13)
+
 		
 	relayList.append(relayB1)
 	relayList.append(relayB2)
