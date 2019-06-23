@@ -65,8 +65,8 @@ def createRelayList():
 	# relayC2 = Relay("Relay C2", 7, 12)
 	# relayC3 = Relay("Relay C3", 6, 22)
 	# relayC4 = Relay("Relay C4", 5, 11)
-	relayBRest = Relay("Relay BRest", 4, 16)
-	relayBShort = Relay("Relay BShort", 3, 15)
+	relayBRest = Relay("Relay BRest", 4, 18)
+	relayBShort = Relay("Relay BShort", 3, 13)
 	# relayCRest = Relay("Relay CRest", 4, 18)
 	# relayCShort = Relay("Relay CShort", 3, 13)
 
