@@ -66,19 +66,19 @@ def createRelayList():
 	relayBShort = Relay("Relay BShort", 1, 15)
 	# relayCRest = Relay("Relay CRest", 4, 18)
 	# relayCShort = Relay("Relay CShort", 3, 13)
-
+		
 	relayList.append(relayB1)
 	relayList.append(relayB2)
 	relayList.append(relayB3)
 	relayList.append(relayB4) 
-	relayList.append(relayC1)
-	relayList.append(relayC2)
-	relayList.append(relayC3)
-	relayList.append(relayC4)
+	# relayList.append(relayC1)
+	# relayList.append(relayC2)
+	# relayList.append(relayC3)
+	# relayList.append(relayC4)
 	relayList.append(relayBRest)
 	relayList.append(relayBShort)
-	relayList.append(relayCRest)
-	relayList.append(relayCShort)
+	# relayList.append(relayCRest)
+	# relayList.append(relayCShort)
 	
 	for relay in relayList:
 		GPIO.setup(relay.outputPin, GPIO.OUT, initial=0)
