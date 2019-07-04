@@ -17,7 +17,7 @@ class Relay:
 		if status:
 			self.turnRelayON()
 		else:
-			self.turnRelayOFF
+			self.turnRelayOFF()
 	
 	def turnRelayON(self):
 		GPIO.output(self.outputPin, GPIO.HIGH)
