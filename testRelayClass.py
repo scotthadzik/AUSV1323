@@ -24,15 +24,20 @@ def setup():
 	highResistance 	= Fault('High Resistance', True, False, True)
 
 	lesson1 = Lesson('lesson1', 1, relayGroupB1, openCircuit)
-	time.sleep(2)
-	lesson1 = Lesson('lesson2', 1, relayGroupB1, shortToGround)
-	time.sleep(2)
-	lesson1 = Lesson('lesson3', 1, relayGroupB1, highResistance)
-	time.sleep(2)
+	
+	lesson2 = Lesson('lesson2', 1, relayGroupB1, shortToGround)
+	
+	lesson3 = Lesson('lesson3', 1, relayGroupB1, highResistance)
+	
 	# lesson1 = Lesson('lesson1', 1, relayGroupB1, noFault)
 
 
 	lesson1.setupFaultForLesson()
+	time.sleep(2)
+	lesson2.setupFaultForLesson()
+	time.sleep(2)
+	lesson2.setupFaultForLesson()
+	time.sleep(2)
 
 
 
