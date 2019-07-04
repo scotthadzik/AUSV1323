@@ -1,7 +1,7 @@
 import time
 from Relay import Relay
 from Lesson import Lesson
-import GPIO as GPIO
+import RPi.GPIO as GPIO
 
 def setup(): 
 	relayB1 = Relay("Relay B1", 9, 40)
