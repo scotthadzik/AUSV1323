@@ -1,4 +1,10 @@
+import time
 from Relay import Relay
 
 relayB1 = Relay("Relay B1", 9, 40)
-relayB1.toggleRelay()
+print('relayOn')
+relayB1.turnRelayON()
+time.sleep(.5)
+print('relayOFF')
+relayB1.turnRelayOFF()
+time.sleep(.5)
