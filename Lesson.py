@@ -2,8 +2,12 @@ import Relay
 
 class Lesson:
 
-	def __init__ (self, number, name, relay1, relay2, relay3):
+	def __init__ (self, name, number, relay):
 		self.name 	= name
 		self.number = number
 		self.relay = relay
-		self.status = status
+
+	def showLessonInfo(self):
+		print(self.name)
+		print(self.number)
+		print(self.relay.name)
