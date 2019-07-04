@@ -20,7 +20,7 @@ class Lesson:
 		faultRelay.setRelayStatus(self.fault.faultRelay)
 		shortRelay.setRelayStatus(self.fault.shortRelay)
 		resistRelay.setRelayStatus(self.fault.resistRelay)
-		print (faultRelay)
-		print (shortRelay)
-		print (resistRelay)
+		print (faultRelay.name)
+		print (shortRelay.name)
+		print (resistRelay.name)
 		
