@@ -29,14 +29,16 @@ def setup():
 	
 	lesson3 = Lesson('lesson3', 1, relayGroupB1, highResistance)
 	
-	# lesson1 = Lesson('lesson1', 1, relayGroupB1, noFault)
+	lesson4 = Lesson('lesson4', 1, relayGroupB1, noFault)
 
 
 	lesson1.setupFaultForLesson()
 	time.sleep(2)
 	lesson2.setupFaultForLesson()
 	time.sleep(2)
-	lesson2.setupFaultForLesson()
+	lesson3.setupFaultForLesson()
+	time.sleep(2)
+	lesson4.setupFaultForLesson()
 	time.sleep(2)
 
 
