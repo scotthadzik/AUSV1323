@@ -18,7 +18,9 @@ class Relay:
 
 	def toggleRelay(self):
 		time.sleep(0.5)
+		print('Toggle Low')
 		GPIO.output(self.outputPin, GPIO.LOW)
 		time.sleep(0.5)
+		print('Toggle High')
 		GPIO.output(self.outputPin, GPIO.HIGH)
 		
