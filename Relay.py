@@ -3,9 +3,6 @@ import RPi.GPIO as GPIO
 
 class Relay:
 
-	
-	# 
-	
 	GPIO.setmode(GPIO.BOARD)       # Numbers GPIOs by physical location
 
 
@@ -22,4 +19,6 @@ class Relay:
 	def toggleRelay(self):
 		time.sleep(0.5)
 		GPIO.output(self.outputPin, GPIO.LOW)
+		time.sleep(0.5)
+		GPIO.output(self.outputPin, GPIO.HIGH)
 		
