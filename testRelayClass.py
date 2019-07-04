@@ -29,6 +29,7 @@ def setup():
 	highResistance 	= Fault('High Resistance', True, False, True)
 
 	lesson1 = Lesson('lesson1', 1, relayGroupB1, openCircuit)
+	
 	lesson1.setupFaultForLesson()
 
 

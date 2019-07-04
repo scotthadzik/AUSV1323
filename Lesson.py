@@ -19,5 +19,8 @@ class Lesson:
 		resistRelay = 	self.relayGroup["resistRelay"]
 		faultRelay.setRelayStatus(self.fault.faultRelay)
 		shortRelay.setRelayStatus(self.fault.shortRelay)
-		resistRelay.setRelayStatus(self.fault.resostRelay)
+		resistRelay.setRelayStatus(self.fault.resistRelay)
+		print (faultRelay)
+		print (shortRelay)
+		print (resistRelay)
 		
