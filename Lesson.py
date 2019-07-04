@@ -11,3 +11,6 @@ class Lesson:
 		print(self.name)
 		print(self.number)
 		print(self.relay.name)
+
+	def setupRelaysForLesson():
+		print ('re;lay')
