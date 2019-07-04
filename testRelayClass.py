@@ -5,7 +5,7 @@ import RPi.GPIO as GPIO
 
 def setup(): 
 	relayB1 = Relay("Relay B1", 9, 40)
-	relayB1.turnRelayON
+	relayB1.turnRelayON()
 	print('relayOn')
 	time.sleep(2)
 
