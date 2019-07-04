@@ -13,6 +13,12 @@ class Relay:
 		self.outputPin = outputPin
 		GPIO.setup(self.outputPin, GPIO.OUT, initial=0)		
 
+	def setRelayStatus(self, status):
+		if status:
+			self.turnRelayON()
+		else:
+			self.turnRelayOFF
+	
 	def turnRelayON(self):
 		GPIO.output(self.outputPin, GPIO.HIGH)
 		
