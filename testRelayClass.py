@@ -8,7 +8,7 @@ import RPi.GPIO as GPIO
 
 def setup(): 
 	relayB1Fault  = Relay("B1 Fault Relay" , 9, 40)
-	relayB1Short  = Relay("B1 Short Relay" , 10, 35)
+	relayB1Short  = Relay("B1 Short Relay" , 10, 33) #35 on pcb
 	relayB1Resist = Relay("B1 Resist Relay", 11, 38)
 	relayB1Fault.setRelayStatus(True)
 	time.sleep(2)
