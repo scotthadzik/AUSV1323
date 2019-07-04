@@ -11,16 +11,16 @@ def setup():
 	relayB1Short  = Relay("B1 Short Relay" , 11, 38)
 	relayB1Resist = Relay("B1 Resist Relay", 12, 33)
 	relayB1Fault.turnRelayON()
-	time.sleep(1)
+	time.sleep(2)
 	relayB1Short.turnRelayON()
-	time.sleep(1)
+	time.sleep(2)
 	relayB1Resist.turnRelayON()
-	time.sleep(1)
+	time.sleep(2)
 
 	relayGroupB1 = {
-		"relayFault"  : relayB1Fault,
-		"relayShort"  : relayB1Short,
-		"relayResist" : relayB1Resist
+		"faultRelay"  : relayB1Fault,
+		"shortRelay"  : relayB1Short,
+		"resistRelay" : relayB1Resist
 	} 
 
 	noFault			= Fault('No Fault')
@@ -29,7 +29,7 @@ def setup():
 	highResistance 	= Fault('High Resistance', True, False, True)
 
 	lesson1 = Lesson('lesson1', 1, relayGroupB1, openCircuit)
-	
+
 	lesson1.setupFaultForLesson()
 
 
