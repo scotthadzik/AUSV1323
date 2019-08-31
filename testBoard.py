@@ -104,16 +104,16 @@ def setupLab():
 	createRelayList()
 	checkRelayBoard()
 	# createLessonList()
-	currentLesson = ''
-	for lesson in lessonList:
-		if lesson.number == currentLessonNum:
-			currentLesson = lesson
-			break
+	# currentLesson = ''
+	# for lesson in lessonList:
+	# 	if lesson.number == currentLessonNum:
+	# 		currentLesson = lesson
+	# 		break
 
-	message = ('Lesson # ' + str(currentLessonNum))
-	LCD1602.clear()
-	LCD1602.write(0, 0, message)
-	LCD1602.write(0, 1, currentLesson.name)
+	# message = ('Lesson # ' + str(currentLessonNum))
+	# LCD1602.clear()
+	# LCD1602.write(0, 0, message)
+	# LCD1602.write(0, 1, currentLesson.name)
 	# setupPin(currentLesson)
 
 def setupPin(lesson):
