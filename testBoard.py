@@ -13,6 +13,7 @@ relayList = []
 currentLessonNum = 1
 lessonList = []
 numberOfLessons = 16
+timeBetweenRelayCheck = 2
 
 def setup():
 	GPIO.setmode(GPIO.BOARD)       # Numbers GPIOs by physical location
@@ -21,7 +22,6 @@ def setup():
 	GPIO.add_event_detect(UPBtnPin, GPIO.BOTH, callback=increaseDetect, bouncetime=500)
 	GPIO.add_event_detect(DOWNBtnPin, GPIO.BOTH, callback=decreaseDetect, bouncetime=500)
 
-	
 	LCD1602.init(0x27, 1)	# init(slave address, background light)
 	LCD1602.clear	# init(slave address, background light)
 	LCD1602.write(0, 0, 'Electrical')
@@ -57,32 +57,35 @@ def createRelayList():
 
 	# 1:15, 2:16, 3:13, 4:18,  5:11,  6:22, 7:12, 8:29, 9:40, 10:35, 11:38, 12:33
 
-	relayB1 = Relay("Relay B1", 9, 40)
-	relayB2 = Relay("Relay B2", 10, 35)
-	relayB3 = Relay("Relay B3", 8, 29)
-	relayB4 = Relay("Relay B4", 7, 12)
-	# relayC1 = Relay("Relay C1", 8, 29)
-	# relayC2 = Relay("Relay C2", 7, 12)
-	# relayC3 = Relay("Relay C3", 6, 22)
-	# relayC4 = Relay("Relay C4", 5, 11)
-	relayBRest = Relay("Relay BRest", 4, 18)
-	relayBShort = Relay("Relay BShort", 3, 13)
-	# relayCRest = Relay("Relay CRest", 4, 18)
-	# relayCShort = Relay("Relay CShort", 3, 13)
+	relayA1_ON_OFF = Relay("Relay A1 On Off", 9,40)
 
-		
-	relayList.append(relayB1)
-	relayList.append(relayB2)
-	relayList.append(relayB3)
-	relayList.append(relayB4) 
-	# relayList.append(relayC1)
-	# relayList.append(relayC2)
-	# relayList.append(relayC3)
-	# relayList.append(relayC4)
-	relayList.append(relayBRest)
-	relayList.append(relayBShort)
-	# relayList.append(relayCRest)
-	# relayList.append(relayCShort)
+
+	# relayB1 = Relay("Relay B1", 9, 40)
+	# relayB2 = Relay("Relay B2", 10, 35)
+	# relayB3 = Relay("Relay B3", 8, 29)
+	# relayB4 = Relay("Relay B4", 7, 12)
+	# # relayC1 = Relay("Relay C1", 8, 29)
+	# # relayC2 = Relay("Relay C2", 7, 12)
+	# # relayC3 = Relay("Relay C3", 6, 22)
+	# # relayC4 = Relay("Relay C4", 5, 11)
+	# relayBRest = Relay("Relay BRest", 4, 18)
+	# relayBShort = Relay("Relay BShort", 3, 13)
+	# # relayCRest = Relay("Relay CRest", 4, 18)
+	# # relayCShort = Relay("Relay CShort", 3, 13)
+
+	relayList.append(relayA1_ON_OFF)
+	# relayList.append(relayB1)
+	# relayList.append(relayB2)
+	# relayList.append(relayB3)
+	# relayList.append(relayB4) 
+	# # relayList.append(relayC1)
+	# # relayList.append(relayC2)
+	# # relayList.append(relayC3)
+	# # relayList.append(relayC4)
+	# relayList.append(relayBRest)
+	# relayList.append(relayBShort)
+	# # relayList.append(relayCRest)
+	# # relayList.append(relayCShort)
 	
 	for relay in relayList:
 		GPIO.setup(relay.outputPin, GPIO.OUT, initial=0)
@@ -94,7 +97,7 @@ def checkRelayBoard():
 		GPIO.output(relay.outputPin, GPIO.HIGH)
 		time.sleep(relayCheckTime)
 		GPIO.output(relay.outputPin, GPIO.LOW)
-		time.sleep(.5)
+		time.sleep(timeBetweenRelayCheck)
 
 def setupLab():
 	createRelayList()
