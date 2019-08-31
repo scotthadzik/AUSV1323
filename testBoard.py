@@ -97,8 +97,8 @@ def checkRelayBoard():
 		LCD1602.write(1, 1, relay.name)
 		relay.setRelayStatus(True)
 		time.sleep(relayCheckTime)
-		relay.setRelayStatus(False)
-		time.sleep(relayCheckTime)
+		# relay.setRelayStatus(False)
+		# time.sleep(relayCheckTime)
 
 def setupLab():
 	createRelayList()
