@@ -13,7 +13,6 @@ relayList = []
 currentLessonNum = 1
 lessonList = []
 numberOfLessons = 16
-timeBetweenRelayCheck = 2
 
 def setup():
 	GPIO.setmode(GPIO.BOARD)       # Numbers GPIOs by physical location
@@ -96,10 +95,10 @@ def checkRelayBoard():
 	LCD1602.write(0, 0, 'Relay Check')
 	for relay in relayList:
 		LCD1602.write(1, 1, relay.name)
-		GPIO.output(relay.outputPin, GPIO.HIGH)
+		relay.setRelayStatus(True)
 		time.sleep(relayCheckTime)
-		GPIO.output(relay.outputPin, GPIO.LOW)
-		time.sleep(timeBetweenRelayCheck)
+		relay.setRelayStatus(False)
+		time.sleep(relayCheckTime)
 
 def setupLab():
 	createRelayList()
