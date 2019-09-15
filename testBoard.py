@@ -56,28 +56,21 @@ def createRelayList():
 
 	# 2:16, 3:13, 4:18,  ,  6:22, 7:12, 8:29, 9:40, 10:35, 11:38, 13:33, 14:15, 15:11
 
+	# ------------relay set A1 ----------------
 	relayA1_ON_OFF = Relay("Relay A1 On Off", 9, 40)
 	relayA1_Short = Relay("Relay A1 Short", 10, 35)
 	relayA1_Resist = Relay("Relay A1 Resist", 11, 38)
 	
+	# ------------relay set A2 ----------------
 	relayA2_ON_OFF = Relay("Relay A2 On Off", 13, 37)
 	relayA2_Short = Relay("Relay A2 Short", 14, 32)
 	relayA2_Resist = Relay("Relay A2 Resist", 15, 36)
+
+	# ------------relay set A3 ----------------
+	relayA3_ON_OFF = Relay("Relay A3 On Off", 8, 29)
+	relayA3_Short = Relay("Relay A3 Short", 7, 12)
+	relayA3_Resist = Relay("Relay A3 Resist", 6, 22)
 	
-
-
-	# relayB1 = Relay("Relay B1", 9, 40)
-	# relayB2 = Relay("Relay B2", 10, 35)
-	# relayB3 = Relay("Relay B3", 8, 29)
-	# relayB4 = Relay("Relay B4", 7, 12)
-	# # relayC1 = Relay("Relay C1", 8, 29)
-	# # relayC2 = Relay("Relay C2", 7, 12)
-	# # relayC3 = Relay("Relay C3", 6, 22)
-	# # relayC4 = Relay("Relay C4", 5, 11)
-	# relayBRest = Relay("Relay BRest", 4, 18)
-	# relayBShort = Relay("Relay BShort", 3, 13)
-	# # relayCRest = Relay("Relay CRest", 4, 18)
-	# # relayCShort = Relay("Relay CShort", 3, 13)
 
 	relayList.append(relayA1_ON_OFF)
 	relayList.append(relayA1_Short)
@@ -86,19 +79,11 @@ def createRelayList():
 	relayList.append(relayA2_ON_OFF)
 	relayList.append(relayA2_Short)
 	relayList.append(relayA2_Resist)
-	
-	# relayList.append(relayB1)
-	# relayList.append(relayB2)
-	# relayList.append(relayB3)
-	# relayList.append(relayB4) 
-	# # relayList.append(relayC1)
-	# # relayList.append(relayC2)
-	# # relayList.append(relayC3)
-	# # relayList.append(relayC4)
-	# relayList.append(relayBRest)
-	# relayList.append(relayBShort)
-	# # relayList.append(relayCRest)
-	# # relayList.append(relayCShort)
+
+	relayList.append(relayA3_ON_OFF)
+	relayList.append(relayA3_Short)
+	relayList.append(relayA3_Resist)
+
 	
 	for relay in relayList:
 		GPIO.setup(relay.outputPin, GPIO.OUT, initial=0)
