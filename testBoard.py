@@ -62,7 +62,7 @@ def createRelayList():
 	
 	relayA2_ON_OFF = Relay("Relay A2 On Off", 13, 32)
 	relayA2_Short = Relay("Relay A2 Short", 14, 37)
-	relayA2_Resist = Relay("Relay A2 Resist", 15, 31)
+	# relayA2_Resist = Relay("Relay A2 Resist", 15, 31)
 	
 
 
@@ -85,7 +85,7 @@ def createRelayList():
 	
 	relayList.append(relayA2_ON_OFF)
 	relayList.append(relayA2_Short)
-	relayList.append(relayA2_Resist)
+	# relayList.append(relayA2_Resist)
 	# relayList.append(relayB1)
 	# relayList.append(relayB2)
 	# relayList.append(relayB3)
