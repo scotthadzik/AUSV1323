@@ -54,11 +54,16 @@ def createRelayList():
 	LCD1602.write(0, 0, 'Add Relays')
 	global relayList
 
-	# 1:15, 2:16, 3:13, 4:18,  5:11,  6:22, 7:12, 8:29, 9:40, 10:35, 11:38, 12:33
+	# 2:16, 3:13, 4:18,  ,  6:22, 7:12, 8:29, 9:40, 10:35, 11:38, 13:33, 14:15, 15:11
 
-	relayA1_ON_OFF = Relay("Relay A1 On Off", 9,40)
+	relayA1_ON_OFF = Relay("Relay A1 On Off", 9, 40)
 	relayA1_Short = Relay("Relay A1 Short", 10, 35)
 	relayA1_Resist = Relay("Relay A1 Resist", 11, 38)
+	
+	relayA2_ON_OFF = Relay("Relay A2 On Off", 13, 33)
+	relayA2_Short = Relay("Relay A2 Short", 14, 15)
+	relayA2_Resist = Relay("Relay A2 Resist", 15, 11)
+	
 
 
 	# relayB1 = Relay("Relay B1", 9, 40)
@@ -77,6 +82,10 @@ def createRelayList():
 	relayList.append(relayA1_ON_OFF)
 	relayList.append(relayA1_Short)
 	relayList.append(relayA1_Resist)
+	
+	relayList.append(relayA2_ON_OFF)
+	relayList.append(relayA2_Short)
+	relayList.append(relayA2_Resist)
 	# relayList.append(relayB1)
 	# relayList.append(relayB2)
 	# relayList.append(relayB3)
