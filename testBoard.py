@@ -69,7 +69,7 @@ def createRelayList():
 	# ------------relay set A3 ----------------
 	relayA3_ON_OFF = Relay("Relay A3 On Off", 8, 29)
 	relayA3_Short = Relay("Relay A3 Short", 7, 12)
-	relayA3_Resist = Relay("Relay A3 Resist", 6, 22)
+	relayA3_Resist = Relay("Relay A3 Resist", 5, 11)
 
 	# ------------relay set A4 ----------------
 	relayA4_ON_OFF = Relay("Relay A4 On Off", 4, 18)
