@@ -38,7 +38,7 @@ def read(chn): #channel
 		if chn == 3:
 			bus.write_byte(address,0x43)
 		bus.read_byte(address) # dummy read to start conversion
-	except Exception, e:
+	except Exception as e:
 		print ("Address: %s" % address)
 		print (e)
 	return bus.read_byte(address)
@@ -49,7 +49,7 @@ def write(val):
 		temp = int(temp) # change string to integer
 		# print temp to see on terminal else comment out
 		bus.write_byte_data(address, 0x40, temp)
-	except Exception, e:
+	except Exception as e:
 		print ("Error: Device address: 0x%2X" % address)
 		print (e)
 
