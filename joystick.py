@@ -23,12 +23,10 @@ def direction():	#get joystick result
 		i = 1		#up
 	if ADC.read(0) >= 250:
 		i = 2		#down
-
 	if ADC.read(1) >= 250:
 		i = 3		#left
 	if ADC.read(1) <= 5:
 		i = 4		#right
-
 	if ADC.read(2) == 0:
 		i = 5		# Button pressed
 
