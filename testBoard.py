@@ -58,7 +58,7 @@ def createRelayList():
 	# 2:16, 3:13, 4:18,  ,  6:22, 7:12, 8:29, 9:40, 10:35, 11:38, 13:33, 14:15, 15:11
 
 	# ------------relay set A1 ----------------
-	relayA1_ON_OFF = Relay(Relay.relay_A1_ON_OFF())
+	relayA1_ON_OFF = Relay("Relay A1 On Off", 9, 40)
 	relayA1_Short = Relay("Relay A1 Short", 10, 35)
 	relayA1_Resist = Relay("Relay A1 Resist", 11, 38)
 	
