@@ -26,5 +26,7 @@ class Relay:
 	def turnRelayOFF(self):
 		GPIO.output(self.outputPin, GPIO.LOW)
 		
-		
+	@classmethod
+	def relay_A1_ON_OFF(cls):
+		return cls('Relay A1 On Off', 9, 40)
 		
