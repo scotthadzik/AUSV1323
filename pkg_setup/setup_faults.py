@@ -3,8 +3,8 @@ from pkg_setup.Fault import Fault
 def create_fault_list():
 	fault_list = []
 
-	fault_dict {
-		'open': Fault('Open Circuit Fault', True, False, False),
+	fault_dict = {
+		'open': Fault('Open Circuit Fault', True, False, False)
 	}
 
 	open_circuit_fault = Fault('Open Circuit Fault', True, False, False)
