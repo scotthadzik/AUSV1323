@@ -21,7 +21,7 @@ def setup(relay_dict):
 	cycle_relays(relay_dict, True)
 	cycle_relays(relay_dict, False)
 
-def cycle_relays(relayList, state):
+def cycle_relays(relay_dict, state):
 	for relay in relay_dict:
 		LCD1602.write(1, 1, relay.name)
 		relay.setRelayStatus(state)
