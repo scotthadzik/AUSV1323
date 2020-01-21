@@ -4,7 +4,8 @@ def create_fault_list():
 	fault_list = []
 
 	fault_dict = {
-		'open': Fault('Open Circuit Fault', True, False, False)
+		'open': {'fault_relay': True, 'short_relay' :False, 'short_relay' :False},
+		'open': {'fault_relay': True, 'short_relay' :False, 'short_relay' :False}
 	}
 
 	open_circuit_fault = Fault('Open Circuit Fault', True, False, False)
