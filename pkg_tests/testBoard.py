@@ -6,7 +6,7 @@ from pkg_component.Relay import Relay
 
 relayCheckTime = 1
 
-def setup():
+def setup(relayList):
 	GPIO.setmode(GPIO.BOARD)       # Numbers GPIOs by physical location
 	LCD1602.init(0x27, 1)	# init(slave address, background light)
 	LCD1602.clear	# init(slave address, background light)
