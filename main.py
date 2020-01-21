@@ -4,8 +4,8 @@ from pkg_setup import setup_faults
 
 
 def setup():
-	# relayList = setup_relays.createRelayList()
-	# testBoard.setup(relayList)
+	relayList = setup_relays.createRelayList()
+	testBoard.setup(relayList)
 	
 	faultList = setup_faults.create_fault_list()
 	print (faultList)

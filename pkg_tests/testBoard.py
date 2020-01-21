@@ -7,7 +7,7 @@ from pkg_component import LCD1602
 
 relayCheckTime = 1
 
-def setup(relayList):
+def setup(relay_dict):
 	GPIO.setmode(GPIO.BOARD)       # Numbers GPIOs by physical location
 	LCD1602.init(0x27, 1)	# init(slave address, background light)
 	LCD1602.clear	# init(slave address, background light)
@@ -15,14 +15,14 @@ def setup(relayList):
 	LCD1602.write(1, 1, 'Check')
 	time.sleep(2)
 	
-	for relay in relayList:
-		GPIO.setup(relay.outputPin, GPIO.OUT, initial=0)
+	for value in relay_dict:
+		GPIO.setup(value.outputPin, GPIO.OUT, initial=0)
 	
-	cycle_relays(relayList, True)
-	cycle_relays(relayList, False)
+	cycle_relays(relay_dict, True)
+	cycle_relays(relay_dict, False)
 
 def cycle_relays(relayList, state):
-	for relay in relayList:
+	for relay in relay_dict:
 		LCD1602.write(1, 1, relay.name)
 		relay.setRelayStatus(state)
 		time.sleep(relayCheckTime)
