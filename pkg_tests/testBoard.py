@@ -15,14 +15,14 @@ def setup(relay_dict):
 	LCD1602.write(1, 1, 'Check')
 	time.sleep(2)
 	
-	for value in relay_dict:
+	for value in relay_dict.values():
 		GPIO.setup(value.outputPin, GPIO.OUT, initial=0)
 	
 	cycle_relays(relay_dict, True)
 	cycle_relays(relay_dict, False)
 
 def cycle_relays(relay_dict, state):
-	for relay in relay_dict:
+	for relay in relay_dict.values():
 		LCD1602.write(1, 1, relay.name)
 		relay.setRelayStatus(state)
 		time.sleep(relayCheckTime)
