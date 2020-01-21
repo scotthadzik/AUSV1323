@@ -4,4 +4,5 @@ class Fault:
 		self.faultRelay = faultRelay
 		self.shortRelay = shortRelay
 		self.resistRelay = resistRelay
-			 
+	
+	
