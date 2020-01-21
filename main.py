@@ -1,8 +1,10 @@
-from test_pkg import testBoard
+from pkg_tests import testBoard
+from pkg_setup import setup_relays
 
 
 def setup():
-        testBoard.setup()
+        relayList = setup_relays.createRelayList()
+        testBoard.setup(relayList)
 
 if __name__ == "__main__":
 	try:
