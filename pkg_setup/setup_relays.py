@@ -1,6 +1,5 @@
 def createRelayList():
-	
-    relayList = []
+	relayList = []
 
 	# 2:16, 3:13, 4:18,  ,  6:22, 7:12, 8:29, 9:40, 10:35, 11:38, 13:33, 14:15, 15:11
 
@@ -24,7 +23,6 @@ def createRelayList():
 	relayA4_Short = Relay("Relay A4 Short", 3, 13)
 	relayA4_Resist = Relay("Relay A4 Resist", 2, 16)
 	
-
 	relayList.append(relayA1_ON_OFF)
 	relayList.append(relayA1_Short)
 	relayList.append(relayA1_Resist)
@@ -41,4 +39,4 @@ def createRelayList():
 	relayList.append(relayA4_Short)
 	relayList.append(relayA4_Resist)
 
-    return relayList
+	return relayList

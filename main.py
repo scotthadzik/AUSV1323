@@ -3,8 +3,8 @@ from pkg_setup import setup_relays
 
 
 def setup():
-        relayList = setup_relays.createRelayList()
-        testBoard.setup(relayList)
+	relayList = setup_relays.createRelayList()
+	testBoard.setup(relayList)
 
 if __name__ == "__main__":
 	try:
