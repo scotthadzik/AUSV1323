@@ -1,4 +1,4 @@
-import testBoard
+from test_pkg import testBoard
 
 
 def setup():
