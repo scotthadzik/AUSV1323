@@ -1,4 +1,4 @@
-from Fault import Fault
+from pkg_setup.Fault import Fault
 
 def create_fault_list():
 	fault_list = []
