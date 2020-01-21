@@ -13,38 +13,12 @@ numberOfLessons = 16
 
 def setup():
 	GPIO.setmode(GPIO.BOARD)       # Numbers GPIOs by physical location
-	GPIO.setup(UPBtnPin, GPIO.IN, pull_up_down=GPIO.PUD_UP)    # Set BtnPin's mode is input, and pull up to high level(3.3V)
-	GPIO.setup(DOWNBtnPin, GPIO.IN, pull_up_down=GPIO.PUD_UP)    # Set BtnPin's mode is input, and pull up to high level(3.3V)
-	GPIO.add_event_detect(UPBtnPin, GPIO.BOTH, callback=increaseDetect, bouncetime=500)
-	GPIO.add_event_detect(DOWNBtnPin, GPIO.BOTH, callback=decreaseDetect, bouncetime=500)
-
 	LCD1602.init(0x27, 1)	# init(slave address, background light)
 	LCD1602.clear	# init(slave address, background light)
 	LCD1602.write(0, 0, 'Electrical')
 	LCD1602.write(1, 1, 'Trainer')
 	time.sleep(2)
 	setupLab()
-	
-	
-def createLessonList():
-	global lessonList
-	lessonList.append(Lesson(1,'Lesson 1', 1, True))
-	lessonList.append(Lesson(2,'Lesson 2', 2, False))
-	lessonList.append(Lesson(3,'Lesson 3', 3, False))
-	lessonList.append(Lesson(4,'Lesson 4', 4, False))
-	lessonList.append(Lesson(5,'Lesson 5', 5, False))
-	lessonList.append(Lesson(6,'Lesson 6', 6, False))
-	lessonList.append(Lesson(7,'Lesson 7', 7, False))
-	lessonList.append(Lesson(8,'Lesson 8', 8, False))
-	lessonList.append(Lesson(9,'Lesson 9', 9, False))
-	lessonList.append(Lesson(10,'Lesson 10', 10, False))
-	lessonList.append(Lesson(11,'Lesson 11', 11, False))
-	lessonList.append(Lesson(12,'Lesson 12', 12, False))
-	lessonList.append(Lesson(13,'Lesson 13', 13, False))
-	lessonList.append(Lesson(14,'Lesson 14', 14, False))
-	lessonList.append(Lesson(15,'Lesson 15', 15, False))
-	lessonList.append(Lesson(16,'Lesson 16', 16, False))
-
 
 def createRelayList():
 	LCD1602.write(0, 0, 'Add Relays')
