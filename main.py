@@ -8,7 +8,7 @@ def setup():
 	testBoard.setup(relayList)
 	
 	faultList = setup_faults.create_fault_list()
-	print faultList
+	print (faultList)
 
 if __name__ == "__main__":
 	try:
