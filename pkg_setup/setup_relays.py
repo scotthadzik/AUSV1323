@@ -1,3 +1,5 @@
+from pkg_component.Relay import Relay
+
 def createRelayList():
 	relayList = []
 
