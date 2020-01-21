@@ -3,6 +3,7 @@
 import time
 import RPi.GPIO as GPIO
 from pkg_component.Relay import Relay
+from pkg_component import LCD1602
 
 relayCheckTime = 1
 
