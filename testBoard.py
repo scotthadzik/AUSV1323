@@ -1,13 +1,10 @@
 #!/usr/bin/env python
-import LCD1602
+
 import time
 import RPi.GPIO as GPIO
-from Lesson import Lesson
-from Relay import Relay
+from component_pkg import Relay
+from component_pkg import LCD1602
 
-
-UPBtnPin = 24
-DOWNBtnPin = 26
 relayCheckTime = 1
 relayList = []
 currentLessonNum = 1
@@ -52,8 +49,6 @@ def createLessonList():
 def createRelayList():
 	LCD1602.write(0, 0, 'Add Relays')
 	global relayList
-
-	
 
 	# 2:16, 3:13, 4:18,  ,  6:22, 7:12, 8:29, 9:40, 10:35, 11:38, 13:33, 14:15, 15:11
 
@@ -108,35 +103,3 @@ def checkRelayBoard():
 def setupLab():
 	createRelayList()
 	checkRelayBoard()
-
-def BtnCheck(x, increaseLab):
-	global currentLessonNum
-	if x == 0:
-		# for pin in outputPins:
-		# 	GPIO.output(pin, GPIO.LOW) 
-		if increaseLab:
-			if currentLessonNum != numberOfLessons:
-				currentLessonNum += 1
-		else:
-			if currentLessonNum > 1:
-				currentLessonNum -= 1
-
-def increaseDetect(chn):
-	print('increase')
-	BtnCheck(GPIO.input(UPBtnPin), True)
-
-def decreaseDetect(chn):
-	print('decrease')
-	BtnCheck(GPIO.input(DOWNBtnPin), False)
-
-def destroy():
-	GPIO.cleanup()
-	pass
-
-if __name__ == "__main__":
-	try:
-		setup()
-		while True:
-			pass
-	except KeyboardInterrupt:
-		destroy()
