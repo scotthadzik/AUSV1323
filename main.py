@@ -4,11 +4,15 @@ from pkg_setup import setup_faults
 
 
 def setup():
-	relayList = setup_relays.createRelayList()
-	testBoard.setup(relayList)
+	relay_dict = setup_relays.createRelayList()
+	testBoard.setup(relay_dict)
 	
-	faultList = setup_faults.create_fault_list()
-	print (faultList)
+	fault_dict = setup_faults.create_fault_list()
+	print (fault_dict)
+
+	
+
+
 
 if __name__ == "__main__":
 	try:
