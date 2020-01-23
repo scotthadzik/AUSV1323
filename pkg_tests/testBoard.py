@@ -18,7 +18,7 @@ def setup(relay_dict):
 	
 	for value in relay_dict.values():
 		print (value.on_off_relay)
-		# GPIO.setup(value.outputPin, GPIO.OUT, initial=0)
+		GPIO.setup(value.on_off_relay.outputPin, GPIO.OUT, initial=1)
 	
 # 	cycle_relays(relay_dict, True)
 # 	cycle_relays(relay_dict, False)
