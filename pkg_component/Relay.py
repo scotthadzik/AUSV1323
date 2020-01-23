@@ -5,7 +5,6 @@ class Relay:
 
 	GPIO.setmode(GPIO.BOARD)       # Numbers GPIOs by physical location
 
-
 	def __init__ (self, name, relayNumber, outputPin, relayState = False):
 		
 		self.name 	= name
