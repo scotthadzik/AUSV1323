@@ -17,7 +17,7 @@ def setup(relay_dict):
 	time.sleep(2)
 	
 	for value in relay_dict.values():
-		print (value.setName)
+		print (value.on_off_relay)
 		# GPIO.setup(value.outputPin, GPIO.OUT, initial=0)
 	
 # 	cycle_relays(relay_dict, True)
