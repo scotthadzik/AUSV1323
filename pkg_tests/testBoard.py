@@ -17,17 +17,19 @@ def setup(relay_dict):
 	time.sleep(2)
 	
 	for value in relay_dict.values():
-		print (value.on_off_relay)
-		GPIO.setup(value.on_off_relay.outputPin, GPIO.OUT, initial=1)
+		GPIO.setup(value.on_off_relay.outputPin, GPIO.OUT, initial=0)
+		GPIO.setup(value.short_relay.outputPin, GPIO.OUT, initial=0)
+		GPIO.setup(value.resist_relay.outputPin, GPIO.OUT, initial=0)
 	
-# 	cycle_relays(relay_dict, True)
-# 	cycle_relays(relay_dict, False)
+	cycle_relays(relay_dict, True)
+	cycle_relays(relay_dict, False)
 
-# def cycle_relays(relay_dict, state):
-# 	for relay in relay_dict.values():
-# 		LCD1602.write(1, 1, relay.name)
-# 		relay.setRelayStatus(state)
-# 		time.sleep(relayCheckTime)
+def cycle_relays(relay_dict, state):
+	for relay_set in relay_dict.values():
+		relay_set.on_off_relay.setRelayStatus(state)
+		relay_set.short_relay.setRelayStatus(state)
+		relay_set.resist_relay.setRelayStatus(state)
+		time.sleep(relayCheckTime)
 	
 	
 
