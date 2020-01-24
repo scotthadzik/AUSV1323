@@ -20,7 +20,7 @@ def setup():
 		'resist': Fault('resist')
 	}
 
-	fault = faults['open']
+	fault = faults['resist']
 
 	# for fault in faults.values():
 	# 	for relay_group in relay_groups.values():
