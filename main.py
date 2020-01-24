@@ -11,10 +11,22 @@ def setup():
 	
 	#set an open in the circuit
 
-	open = fault_dict['open']
-	relay = relay_dict['A1_Relays']
-	print (open['fault_relay'])
-	print (relay.on_off_relay.turnRelayON())
+	# open = fault_dict['open']
+	# short = fault_dict['short']
+	# hi_resist = fault_dict['hi_resist']
+
+	set_of_relays = relay_dict['A1_Relays']
+	# print (open['fault_relay'])
+	# print (relay.on_off_relay.turnRelayON())
+
+	current_fault = 'open'
+
+	fault_settings = fault_dict[current_fault]
+
+	set_of_relays.on_off_relay.setRelayStatus(fault_settings['on_off_relay'])
+	set_of_relays.short_relay.setRelayStatus(fault_settings['short_relay'])
+	set_of_relays.hi_resist.setRelayStatus(fault_settings['resist_relay'])
+
 
 
 
