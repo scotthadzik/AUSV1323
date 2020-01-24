@@ -9,11 +9,11 @@ class Faults:
 			on_off_relay = True
 			short_relay  = False
 			resist_relay = False
-		elif self.type = 'short':
+		elif self.type == 'short':
 			on_off_relay = True
 			short_relay  = False
 			resist_relay = True
-		elif self.type = 'resist':
+		elif self.type == 'resist':
 			on_off_relay = True
 			short_relay  = True
 			resist_relay = False
