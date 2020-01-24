@@ -36,6 +36,9 @@ def setup():
 	relay_groups['a1'].on_off_relay.setRelayStatus(fault.on_off_relay)
 	relay_groups['a1'].short_relay.setRelayStatus(fault.short_relay)
 	relay_groups['a1'].resist_relay.setRelayStatus(fault.resist_relay)
+	relay_groups['a1'].on_off_relay.setRelayStatus(False)
+	relay_groups['a1'].short_relay.setRelayStatus(False)
+	relay_groups['a1'].resist_relay.setRelayStatus(False)
 
 if __name__ == "__main__":
 	try:
