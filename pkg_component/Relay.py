@@ -8,7 +8,6 @@ class Relay:
 	def __init__ (self, name, outputPin, relayState = False):
 		
 		self.name 	= name
-		# self.relayNumber = relayNumber
 		self.outputPin = outputPin
 		self.relayNumber = None
 		GPIO.setup(self.outputPin, GPIO.OUT, initial=0)		
