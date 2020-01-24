@@ -31,9 +31,9 @@ def setup():
 
 	time.sleep(10)
 
-	set_of_relays.on_off_relay.setRelayStatus(fault_settings[False])
-	set_of_relays.short_relay.setRelayStatus(fault_settings[False])
-	set_of_relays.resist_relay.setRelayStatus(fault_settings[False])
+	set_of_relays.on_off_relay.setRelayStatus(False)
+	set_of_relays.short_relay.setRelayStatus(False)
+	set_of_relays.resist_relay.setRelayStatus(False)
 
 if __name__ == "__main__":
 	try:
