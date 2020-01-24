@@ -1,7 +1,7 @@
 from pkg_tests import testBoard
 from pkg_setup import setup_relays
 from pkg_setup import setup_faults
-
+import time
 
 def setup():
 	relay_dict = setup_relays.createRelayList()
@@ -29,12 +29,14 @@ def setup():
 	set_of_relays.short_relay.setRelayStatus(fault_settings['short_relay'])
 	set_of_relays.resist_relay.setRelayStatus(fault_settings['resist_relay'])
 
+	time.sleep(10)
 
+	set_of_relays.on_off_relay.setRelayStatus(fault_settings[False])
+	set_of_relays.short_relay.setRelayStatus(fault_settings[False])
+	set_of_relays.resist_relay.setRelayStatus(fault_settings[False])
 
-
+def destroy():
 	
-
-
 
 if __name__ == "__main__":
 	try:
