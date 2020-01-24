@@ -22,6 +22,7 @@ def setup():
 
 	# set_of_relays = relay_dict[current_relay_set]
 	print ('on off relay num',a1.on_off_relay.relayNumber)
+	print ('on off relay num',a1.name)
 	a1.on_off_relay.setRelayStatus(fault.on_off_relay)
 	a1.short_relay.setRelayStatus(fault.short_relay)
 	a1.resist_relay.setRelayStatus(fault.resist_relay)
