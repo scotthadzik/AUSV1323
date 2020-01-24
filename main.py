@@ -15,22 +15,23 @@ def setup():
 	# relay_dict = setup_relays.createRelayList()
 	# testBoard.setup(relay_dict)
 	
-	open = Fault('open')
-	short = Fault('short')
-	resist = Fault('resist')
+	faults = { 
+		'open'  : Fault('open'),
+		'short' : Fault('short'),
+		'resist': Fault('resist')
+	}
 
-	fault = open
+	for fault in faults.values():
+		for relay_group in relay_groups.values():
+			relay_group.on_off_relay.setRelayStatus(fault.on_off_relay)
+			relay_group.short_relay.setRelayStatus(fault.short_relay)
+			relay_group.resist_relay.setRelayStatus(fault.resist_relay)
+			
+			time.sleep(2)
 
-	for relay_group in relay_groups.values():
-		relay_group.on_off_relay.setRelayStatus(fault.on_off_relay)
-		relay_group.short_relay.setRelayStatus(fault.short_relay)
-		relay_group.resist_relay.setRelayStatus(fault.resist_relay)
-		
-		time.sleep(2)
-
-		relay_group.on_off_relay.setRelayStatus(False)
-		relay_group.short_relay.setRelayStatus(False)
-		relay_group.resist_relay.setRelayStatus(False)
+			relay_group.on_off_relay.setRelayStatus(False)
+			relay_group.short_relay.setRelayStatus(False)
+			relay_group.resist_relay.setRelayStatus(False)
 
 if __name__ == "__main__":
 	try:
