@@ -5,7 +5,7 @@ from pkg_setup import setup_faults
 
 def setup():
 	relay_dict = setup_relays.createRelayList()
-	testBoard.setup(relay_dict)
+	# testBoard.setup(relay_dict)
 	
 	fault_dict = setup_faults.create_fault_list()
 	
@@ -14,7 +14,7 @@ def setup():
 	open = fault_dict['open']
 	relay = relay_dict['A1_Relays']
 	print (open['fault_relay'])
-	print (relay.on_off_relay())
+	print (relay.on_off_relay)
 
 
 
