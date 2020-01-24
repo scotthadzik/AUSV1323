@@ -25,7 +25,7 @@ def setup():
 
 	set_of_relays.on_off_relay.setRelayStatus(fault_settings['on_off_relay'])
 	set_of_relays.short_relay.setRelayStatus(fault_settings['short_relay'])
-	set_of_relays.hi_resist.setRelayStatus(fault_settings['resist_relay'])
+	set_of_relays.resist.setRelayStatus(fault_settings['resist_relay'])
 
 
 
