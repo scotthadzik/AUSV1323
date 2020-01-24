@@ -6,8 +6,6 @@ class RelayGroup:
 		self.on_off_relay = Relay('On Off', o_pin)
 		self.short_relay  = Relay('Short', s_pin)
 		self.resist_relay = Relay('Resist', r_pin)
-	
-	def set_relay_number(self):
 		if self.name == 'A1':
 			self.on_off_relay.set_relay_number(9)
 			self.on_off_relay.set_relay_number(10)
