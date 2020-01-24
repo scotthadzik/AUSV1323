@@ -1,6 +1,6 @@
 from pkg_tests import testBoard
 from pkg_setup import setup_relays
-from pkg_setup.Faults import Fault
+from pkg_setup.Fault import Fault
 import time
 
 def setup():
