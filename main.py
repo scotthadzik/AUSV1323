@@ -1,7 +1,6 @@
 from pkg_tests import testBoard
 from pkg_setup import setup_relays
 from pkg_setup.Faults import Faults
-from pkg_set_relay_state import set_relay_group_state
 import time
 
 def setup():
