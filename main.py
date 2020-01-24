@@ -21,7 +21,7 @@ def setup():
 
 	fault = open
 
-	for relay_group in relay_groups:
+	for relay_group in relay_groups.values():
 		relay_group.on_off_relay.setRelayStatus(fault.on_off_relay)
 		relay_group.short_relay.setRelayStatus(fault.short_relay)
 		relay_group.resist_relay.setRelayStatus(fault.resist_relay)
