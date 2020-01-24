@@ -12,7 +12,7 @@ def setup():
 	resist = Fault('resist')
 
 	current_fault = open
-	current_relay_set = 'A1_Relays'
+	current_relay_set = 'A2_Relays'
 
 	set_of_relays = relay_dict[current_relay_set]
 
@@ -27,7 +27,7 @@ def setup():
 	set_of_relays.resist_relay.setRelayStatus(False)
 
 	current_fault = short
-	current_relay_set = 'A1_Relays'
+	current_relay_set = 'A3_Relays'
 
 	set_of_relays = relay_dict[current_relay_set]
 
@@ -42,7 +42,7 @@ def setup():
 	set_of_relays.resist_relay.setRelayStatus(False)
 
 	current_fault = resist
-	current_relay_set = 'A1_Relays'
+	current_relay_set = 'A4_Relays'
 
 	set_of_relays = relay_dict[current_relay_set]
 
