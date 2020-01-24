@@ -26,6 +26,36 @@ def setup():
 	set_of_relays.short_relay.setRelayStatus(False)
 	set_of_relays.resist_relay.setRelayStatus(False)
 
+	current_fault = short
+	current_relay_set = 'A1_Relays'
+
+	set_of_relays = relay_dict[current_relay_set]
+
+	set_of_relays.on_off_relay.setRelayStatus(current_fault.on_off_relay)
+	set_of_relays.short_relay.setRelayStatus(current_fault.short_relay)
+	set_of_relays.resist_relay.setRelayStatus(current_fault.resist_relay)
+
+	time.sleep(10)
+
+	set_of_relays.on_off_relay.setRelayStatus(False)
+	set_of_relays.short_relay.setRelayStatus(False)
+	set_of_relays.resist_relay.setRelayStatus(False)
+
+	current_fault = resist
+	current_relay_set = 'A1_Relays'
+
+	set_of_relays = relay_dict[current_relay_set]
+
+	set_of_relays.on_off_relay.setRelayStatus(current_fault.on_off_relay)
+	set_of_relays.short_relay.setRelayStatus(current_fault.short_relay)
+	set_of_relays.resist_relay.setRelayStatus(current_fault.resist_relay)
+
+	time.sleep(10)
+
+	set_of_relays.on_off_relay.setRelayStatus(False)
+	set_of_relays.short_relay.setRelayStatus(False)
+	set_of_relays.resist_relay.setRelayStatus(False)
+
 if __name__ == "__main__":
 	try:
 		setup()
