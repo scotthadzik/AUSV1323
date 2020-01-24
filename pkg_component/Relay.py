@@ -10,7 +10,7 @@ class Relay:
 		self.name 	= name
 		# self.relayNumber = relayNumber
 		self.outputPin = outputPin
-		self.relayNumber = 0
+		self.relayNumber = None
 		GPIO.setup(self.outputPin, GPIO.OUT, initial=0)		
 
 
