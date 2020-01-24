@@ -15,12 +15,14 @@ def setup():
 	# short = fault_dict['short']
 	# hi_resist = fault_dict['hi_resist']
 
-	set_of_relays = relay_dict['A1_Relays']
+	
 	# print (open['fault_relay'])
 	# print (relay.on_off_relay.turnRelayON())
 
 	current_fault = 'open'
+	current_relay_set = 'A1_Relays'
 
+	set_of_relays = relay_dict[current_relay_set]
 	fault_settings = fault_dict[current_fault]
 
 	set_of_relays.on_off_relay.setRelayStatus(fault_settings['on_off_relay'])
