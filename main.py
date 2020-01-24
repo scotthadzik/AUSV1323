@@ -35,9 +35,6 @@ def setup():
 	set_of_relays.short_relay.setRelayStatus(fault_settings[False])
 	set_of_relays.resist_relay.setRelayStatus(fault_settings[False])
 
-def destroy():
-	
-
 if __name__ == "__main__":
 	try:
 		setup()
