@@ -1,5 +1,4 @@
 from pkg_tests import testBoard
-from pkg_setup import setup_relays
 from pkg_setup.RelayGroup import RelayGroup
 from pkg_setup.Fault import Fault
 import time
