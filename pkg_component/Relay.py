@@ -5,12 +5,17 @@ class Relay:
 
 	GPIO.setmode(GPIO.BOARD)       # Numbers GPIOs by physical location
 
-	def __init__ (self, name, relayNumber, outputPin, relayState = False):
+	def __init__ (self, name, outputPin, relayState = False):
 		
 		self.name 	= name
 		self.relayNumber = relayNumber
 		self.outputPin = outputPin
+		self.relayNumber = 0
 		GPIO.setup(self.outputPin, GPIO.OUT, initial=0)		
+
+
+	def set_relay_number(self, number):
+		self.relayNumber = number
 
 	def setRelayStatus(self, status):
 		if status:

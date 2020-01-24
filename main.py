@@ -6,7 +6,10 @@ import time
 
 def setup():
 	
-	a1 = RelayGroup('a1',40,35,38)
+	a1 = RelayGroup('A1',40,35,38)
+	a2 = RelayGroup('A2',37,32,36)
+	a3 = RelayGroup('A3',29,12,22)
+	a4 = RelayGroup('A4',18,13,16)
 	
 	# relay_dict = setup_relays.createRelayList()
 	# testBoard.setup(relay_dict)
@@ -16,11 +19,9 @@ def setup():
 	resist = Fault('resist')
 
 	fault = open
-	relay1 = fault.on_off_relay
-	current_relay_set = 'A1_Relays'
 
 	# set_of_relays = relay_dict[current_relay_set]
-
+	print ('on off relay num',a1.on_off_relay.relayNumber)
 	a1.on_off_relay.setRelayStatus(fault.on_off_relay)
 	a1.short_relay.setRelayStatus(fault.short_relay)
 	a1.resist_relay.setRelayStatus(fault.resist_relay)
