@@ -14,7 +14,7 @@ def setup():
 	open = fault_dict['open']
 	relay = relay_dict['A1_Relays']
 	print (open['fault_relay'])
-	print (relay)
+	print (relay.on_off_relay())
 
 
 
