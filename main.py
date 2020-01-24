@@ -11,8 +11,8 @@ def setup():
 	
 	#set an open in the circuit
 
-	open = fault_dict('open')
-	relay = relay_dict('A1_Relays')
+	open = fault_dict['open']
+	relay = relay_dict['A1_Relays']
 	print (open['fault_relay'])
 	print (relay)
 
