@@ -11,12 +11,12 @@ class Fault:
 			self.resist_relay = False
 		elif self.type == 'short':
 			self.on_off_relay = True
-			self.short_relay  = False
-			self.resist_relay = True
-		elif self.type == 'resist':
-			self.on_off_relay = True
 			self.short_relay  = True
 			self.resist_relay = False
+		elif self.type == 'resist':
+			self.on_off_relay = True
+			self.short_relay  = False
+			self.resist_relay = True
 
 
 	 
