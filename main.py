@@ -23,7 +23,7 @@ def setup():
 	
 	faults = { 
 		'open'  : Fault('open'),
-		'short' : Fault('short'), #TODO fix currently switched with resist
+		'short' : Fault('short'), 
 		'resist': Fault('resist')
 	}
 
