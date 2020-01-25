@@ -21,4 +21,4 @@ class RelayGroup:
 		elif self.name == 'A4':
 			self.on_off_relay.set_relay_number(4)
 			self.on_off_relay.set_relay_number(3)
-			self.on_off_relay.set_relay_number(2)
+			self.on_off_relay.set_relay_number(2)  
