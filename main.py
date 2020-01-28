@@ -13,7 +13,7 @@ def setup():
 	'a4' : RelayGroup('A4',18,13,16)
 	}
 
-	cb_relay = Relay('CB Relay', 33)
+	cb_relay = Relay('CB Relay', 31)
 	cb_relay.setRelayStatus(True)
 	sleep(2)
 	cb_relay.setRelayStatus(False)
