@@ -15,7 +15,11 @@ def setup():
 
 	cb_relay = Relay('CB Relay', 31)
 	cb_relay.setRelayStatus(True)
-	sleep(2)
+	time.sleep(2)
+	cb_relay.setRelayStatus(False)
+	cb_relay = Relay('CB Relay', 33)
+	cb_relay.setRelayStatus(True)
+	time.sleep(2)
 	cb_relay.setRelayStatus(False)
 
 	# relay_dict = setup_relays.createRelayList()
