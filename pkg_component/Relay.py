@@ -29,6 +29,6 @@ class Relay:
 		GPIO.output(self.outputPin, GPIO.LOW)
 
 	@staticmethod
-	def clean_gpio(self):
+	def clean_gpio():
 		GPIO.cleanup()
 		
