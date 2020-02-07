@@ -27,4 +27,8 @@ class Relay:
 		
 	def turnRelayOFF(self):
 		GPIO.output(self.outputPin, GPIO.LOW)
+
+	@staticmethod
+	def clean_gpio(self):
+		GPIO.cleanup()
 		

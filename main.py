@@ -42,7 +42,10 @@ def setup():
 		# relay_group.on_off_relay.setRelayStatus(False)
 		# relay_group.short_relay.setRelayStatus(False)
 		# relay_group.resist_relay.setRelayStatus(False)
-			
+
+def destroy():
+	Relay.clean_gpio()
+
 
 if __name__ == "__main__":
 	try:
