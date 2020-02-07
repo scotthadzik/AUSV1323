@@ -26,18 +26,18 @@ def setup():
 
 	for fault in faults.values():
 		print(fault.type)
-		for relay_group in relay_groups.values():
-			relay_group.cb_relay.setRelayStatus(fault.cb_relay)
-			relay_group.on_off_relay.setRelayStatus(fault.on_off_relay)
-			relay_group.short_relay.setRelayStatus(fault.short_relay)
-			relay_group.resist_relay.setRelayStatus(fault.resist_relay)
-			
-			
-			time.sleep(10)
+		# for relay_group in relay_groups.values():
+		a1.cb_relay.setRelayStatus(fault.cb_relay)
+		a1.on_off_relay.setRelayStatus(fault.on_off_relay)
+		a1.short_relay.setRelayStatus(fault.short_relay)
+		a1.resist_relay.setRelayStatus(fault.resist_relay)
+		
+		
+		time.sleep(10)
 
-			relay_group.on_off_relay.setRelayStatus(False)
-			relay_group.short_relay.setRelayStatus(False)
-			relay_group.resist_relay.setRelayStatus(False)
+		# relay_group.on_off_relay.setRelayStatus(False)
+		# relay_group.short_relay.setRelayStatus(False)
+		# relay_group.resist_relay.setRelayStatus(False)
 			
 
 if __name__ == "__main__":
