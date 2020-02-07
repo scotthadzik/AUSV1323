@@ -3,7 +3,7 @@ from pkg_component.Relay import Relay
 class RelayGroup:
 	
 	#class attribute
-	circuit_breaker_relay = Relay('CB Relay', 31)
+	cb_relay = Relay('CB Relay', 31)
 	
 	def __init__(self, name, o_pin, s_pin, r_pin):
 		self.name = name

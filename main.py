@@ -13,15 +13,6 @@ def setup():
 	'a4' : RelayGroup('A4',18,13,16)
 	}
 
-	cb_relay = Relay('CB Relay', 31)
-	cb_relay.setRelayStatus(True)
-	time.sleep(2)
-	cb_relay.setRelayStatus(False)
-	# cb_relay = Relay('CB Relay', 33)
-	# cb_relay.setRelayStatus(True)
-	# time.sleep(2)
-	# cb_relay.setRelayStatus(False)
-
 	# relay_dict = setup_relays.createRelayList()
 	# testBoard.setup(relay_dict)
 	
@@ -31,20 +22,22 @@ def setup():
 		'resist': Fault('resist')
 	}
 
-	# fault = faults['resist']
+	fault = faults['resist']
 
-	# for fault in faults.values():
-	# 	print(fault.type)
-	# 	for relay_group in relay_groups.values():
-	# 		relay_group.on_off_relay.setRelayStatus(fault.on_off_relay)
-	# 		relay_group.short_relay.setRelayStatus(fault.short_relay)
-	# 		relay_group.resist_relay.setRelayStatus(fault.resist_relay)
+	for fault in faults.values():
+		print(fault.type)
+		for relay_group in relay_groups.values():
+			relay_group.cb_relay.setRelayStatus(fault.cb_relay)
+			relay_group.on_off_relay.setRelayStatus(fault.on_off_relay)
+			relay_group.short_relay.setRelayStatus(fault.short_relay)
+			relay_group.resist_relay.setRelayStatus(fault.resist_relay)
 			
-	# 		time.sleep(2)
+			
+			time.sleep(10)
 
-	# 		relay_group.on_off_relay.setRelayStatus(False)
-	# 		relay_group.short_relay.setRelayStatus(False)
-	# 		relay_group.resist_relay.setRelayStatus(False)
+			relay_group.on_off_relay.setRelayStatus(False)
+			relay_group.short_relay.setRelayStatus(False)
+			relay_group.resist_relay.setRelayStatus(False)
 			
 
 if __name__ == "__main__":
