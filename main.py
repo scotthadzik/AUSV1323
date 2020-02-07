@@ -26,6 +26,7 @@ def setup():
 
 	for fault in faults.values():
 		print(fault.type)
+		a1 = relay_groups['a1']
 		# for relay_group in relay_groups.values():
 		a1.cb_relay.setRelayStatus(fault.cb_relay)
 		a1.on_off_relay.setRelayStatus(fault.on_off_relay)
