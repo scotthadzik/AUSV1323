@@ -37,7 +37,7 @@ def setup():
 	a1.resist_relay.setRelayStatus(fault.resist_relay)
 		
 		
-		time.sleep(10)
+	time.sleep(10)
 
 		# relay_group.on_off_relay.setRelayStatus(False)
 		# relay_group.short_relay.setRelayStatus(False)
